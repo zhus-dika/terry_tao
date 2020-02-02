@@ -21,10 +21,12 @@
 }
 .form__row {
     display: flex;
+    width: 60vw;
     justify-content: space-between;
     margin-bottom: 8%;
     @include tablets {
         margin-bottom: 10%;
+        width: 75vw;
     }
 }
 .form-label {
@@ -41,9 +43,11 @@
 }
 .form-input__wrapper {
     display: flex;
-    margin-right: 15%;
     padding-bottom: 5%;
-    width: 170%;
+    width: 25vw;
+    &.textarea{
+        width: 60vw;
+    }
     border: 2px solid white;
     border-top-color: transparent;
     border-right-color: transparent;
