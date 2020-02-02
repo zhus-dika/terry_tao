@@ -18,7 +18,16 @@ html(lang="en")
               +image("background/bridge.png", "bridge")
             .bg_bg
               +image("background/background_main-page.png", "background_main-page")
-            .parallax__content
+          .hidden-menu
+            - var navList = ["Main", "About Terence", "Skills", "Papers", "Quotes", "Contacts"]
+              nav.nav
+                ul.nav__list
+                  each item in navList
+                    li.nav__item-hidden
+                      a.nav__item-link(href='#') #{item}
+              a.closebtn(href='javascript:void(0)' onclick='closeNav()')
+                +icon('close', "close_img")
+
           .container.main-page__container
             header.header
               .logo
@@ -36,6 +45,8 @@ html(lang="en")
                     li.socials__item
                       a.socials__item-link(href='#')
                         +icon(item, "socials_img")
+              a.hamburger-menu-link(onclick='openNav()' href='#')
+                .hamburger-menu-link__bars
             .whoami
               .about-me Web app about
               .whoami__title Terence Tao

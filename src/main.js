@@ -95,3 +95,18 @@ var mySwiper = new Swiper('.wrapper', {
   loop: true
  });*/
 
+ const navList = document.querySelector(".nav__list"),
+ hamburgerMenu = document.querySelector(".hamburger-menu-link");
+ var boo = 'false';
+ hamburgerMenu.addEventListener('click', e => {
+     e.preventDefault();
+     e.stopPropagation();
+     if (boo == 'false') {
+         navList.style.display = 'flex';
+         boo = 'true';
+     }
+     else {
+         navList.style.display = 'none';
+         boo = 'false';
+     }
+ });
