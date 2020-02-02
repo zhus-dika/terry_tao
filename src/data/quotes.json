@@ -1,0 +1,24 @@
+[
+    {
+      "id": 0,
+      "text": "Tao's mathematical knowledge has an extraordinary combination of breadth and depth: he can write confidently and authoritatively on topics as diverse as partial differential equations, analytic number theory, the geometry of 3-manifolds, nonstandard analysis, group theory, model theory, quantum mechanics, probability, ergodic theory, combinatorics, harmonic analysis, image processing, functional analysis, and many others. Some of these are areas to which he has made fundamental contributions. Others are areas that he appears to understand at the deep intuitive level of an expert despite officially not working in those areas. How he does all this, as well as writing papers and books at a prodigious rate, is a complete mystery. It has been said that David Hilbert was the last person to know all of mathematics, but it is not easy to find gaps in Tao&apos;s knowledge, and if you do then you may well find that the gaps have been filled a year later.",
+      "author_name": "Timothy Gowers",
+      "author_occ": "British mathematician",
+      "author_pic": "timothy.jpeg"
+    },
+    {
+      "id": 1,
+      "text": "In 2004, Dr. Tao, along with Ben Green, a mathematician now at the University of Cambridge in England, solved a problem related to the Twin Prime Conjecture by looking at prime number progressions&mdash;series of numbers equally spaced. (For example, 3, 7 and 11 constitute a progression of prime numbers with a spacing of 4; the next number in the sequence, 15, is not prime.) Dr. Tao and Dr. Green proved that it is always possible to find, somewhere in the infinity of integers, a progression of prime numbers of equal spacing and any length.",
+      "author_name": "New York Times",
+      "author_occ": "American newspaper",
+      "author_pic": "NewYorkTimesFrontPage-15Nov2012.jpg"
+    },
+    {
+      "id": 2,
+      "text": "Tao’s work is characterized by a high degree of originality and a diversity that crosses research boundaries, together with an ability to work in collaboration with other specialists. His main field is the theory of partial differential equations. Those are the principal equations used in mathematical physics. For example, the nonlinear Schrödinger equation models light transmission in fibre optics. Despite the ubiquity of partial differential equations in physics, it is usually difficult to obtain or rigorously prove that such equations have solutions or that the solutions have the required properties. Along with that of several collaborators, Tao’s work on the nonlinear Schrödinger equation established crucial existence theorems. He also did important work on waves that can be applied to the gravitational waves predicted by Albert Einstein’s theory of general relativity.",    
+      "author_name": "Encyclopedia Britannica",
+      "author_occ": "https://www.britannica.com/",
+      "author_pic": "britannica.jpg"
+    }
+  ]
+  

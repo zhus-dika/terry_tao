@@ -1,0 +1,59 @@
+script(type="text/x-template")#slider-container
+  .papers-slider
+    display(
+      :papers="papers",
+      :currentPaper="currentPaper",
+      :currentIndex="currentIndex"
+      @slide="handleSlide"
+    )
+    info(
+      :currentPaper="currentPaper"
+    )
+
+script(type="text/x-template")#slider-display
+  .papers-slider__pics(:data-slide="currentIndex + 1")
+    .papers-slider__pics-content
+      .papers-slider__fullpic-container
+        img(:src="currentPaper.photo").papers-slider__fullpic
+        btns(
+          @slide="direction => $emit('slide', direction)"
+          :papers="papers"
+          :currentIndex="currentIndex"
+        )
+        thumbs(a
+          :papers="papers"
+          :currentPaper="currentPaper"
+        )
+
+script(type="text/x-template")#slider-btns
+  .papers-slider__buttons
+    a(href="#" @click.prevent="$emit('slide', 'next')" :class="{active: currentIndex < papers.length - 1}").papers-slider__btn.papers-slider__btn_next
+    
+    a(href="#" @click.prevent="$emit('slide', 'prev')" :class="{active: currentIndex > 0 }").papers-slider__btn.papers-slider__btn_prev
+    
+
+script(type="text/x-template")#slider-thumbs
+  ul.papers-slider__thumbs
+    li.papers-slider__thumb-item(
+      v-for="paper in papers" :key="paper.id"
+      :class="{active: currentPaper.id === paper.id }"
+    )
+      a.papers-slider__thumb-link
+        img(:src="paper.photo" alt="").papers-slider__thumb
+
+script(type="text/x-template")#slider-info
+  .papers-slider__data
+    tags(
+      :tagsArray="tagsArray"
+    )
+    .papers-slider__title {{currentPaper.title}}
+    .papers-slider__desc
+      p {{currentPaper.desc}}
+    .papers-slider__link 
+      +icon('link', 'link__pic')
+      a(:href="currentPaper.link").iconed-link Paper in arXiv
+
+script(type="text/x-template")#slider-tags
+  ul.papers-slider__tags
+    li.papers-slider__tag-item(v-for="tag in tagsArray")
+      .tag {{tag}}

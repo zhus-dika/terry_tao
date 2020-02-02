@@ -1,0 +1,20 @@
+[
+  {
+    "skillsGroup": "Known for",
+    "skills": {
+      "Green-Tao theorem": 30,
+      "Erdos discrepancy problem": 50,
+      "Compressed sensing": 30,
+      "Tao's inequality": 100
+    }
+  },
+  {
+    "skillsGroup": "Also main results",
+    "skills": {
+      "Cramer conjecture": 30,
+      "Collatz conjecture": 60,
+      "Navier-Stokes existence and smoothness": 95,
+      "Neutrino oscillations": 70
+    }
+  }
+]

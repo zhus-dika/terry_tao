@@ -1,0 +1,42 @@
+script(type="text/x-template")#quotes-container
+  .quotes-slider
+    display(
+      :quotes="quotes",
+      :currentQuote="currentQuote",
+      :secondQuote="secondQuote",
+      :currentIndex="currentIndex"
+      @slide="handleSlide"
+    )
+    info(
+      :currentQuote="currentQuote",
+      :secondQuote="secondQuote"
+    )
+script(type="text/x-template")#quotes-display
+    btns(
+      :quotes="quotes",
+      :currentIndex="currentIndex",
+      @slide="direction => $emit('slide', direction)"
+    ) 
+script(type="text/x-template")#quotes-btns
+  .quotes-slider__buttons
+    a(href="#" @click.prevent="$emit('slide', 'prev')" :class="{active: currentIndex > 0 }").quotes-slider__btn.quotes-slider__btn_prev
+    a(href="#" @click.prevent="$emit('slide', 'next')" :class="{active: currentIndex < quotes.length - 1}").quotes-slider__btn.quotes-slider__btn_next
+
+script(type="text/x-template")#quotes-info
+  ul.quotes__list
+    li.quotes__item
+      .quotes__text {{currentQuote.text}}
+      .quotes__author
+          .quotes__author-avatar
+              img(:src="currentQuote.author_pic").author__avatar
+          .quotes__about
+              h5.quotes__item-author {{currentQuote.author_name}}
+              .author__role {{currentQuote.author_occ}}
+    li.quotes__item
+      .quotes__text {{secondQuote.text}}
+      .quotes__author
+          .quotes__author-avatar
+              img(:src="secondQuote.author_pic").author__avatar
+          .quotes__about
+              h5.quotes__item-author {{secondQuote.author_name}}
+              .author__role {{secondQuote.author_occ}}

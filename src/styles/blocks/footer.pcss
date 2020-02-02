@@ -1,0 +1,77 @@
+.footer {
+    &__container {
+        display: flex;
+        padding: 2% 0;
+    }
+    background-color: #222427;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    &__paragraph {
+        padding-right: 5%;
+        opacity: 0.3;
+        font-size: 18px;
+        color: #ffffff;
+        font-family: "Alegreya Sans";
+        font-weight: bold;
+        line-height: 30px;
+    }
+    &__copyright {
+        width: 100%;
+        opacity: 0.1;
+        font-size: 48px;
+        font-weight: 400;
+    }
+    &__description {
+        margin-right: 5%;
+        width: 50%;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: #ffffff;
+        font-family: "Alegreya Sans";
+        font-weight: bold;
+        &-author {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+    .nav {
+        padding: 3% 0 8%;
+        width: 90%;
+    }
+    .socials {
+        padding-top: 5%;
+        display: flex;
+        justify-content: flex-start;
+        &__item {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            opacity: 0.3;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+        &_img {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+    }
+}
+.footer__author {
+    padding-top: 5%;
+    color: #ffffff;
+    font-family: "Alegreya Sans";
+    font-size: 16px;
+    font-style: italic;
+}
+.footer__column-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

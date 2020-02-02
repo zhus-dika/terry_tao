@@ -1,0 +1,53 @@
+.header {
+    z-index: 20;
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.logo_content {
+    width: 47px;
+    height: 26px;
+    color: white;
+    font-family: "Alegreya Sans - Extra Bold";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 30px;
+}
+.nav {
+    width: 65%;
+}
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+}
+.nav__item-link {
+    color: white;
+    font-family: "Alegreya Sans";
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.socilas {
+    width: 20%;
+}
+.socials__list {
+    display: flex;
+    justify-content: space-between;
+}
+.socials__item{
+    margin-right: 15px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.socials_img{
+    height: 30px; 
+    width: 30px; 
+    opacity: 0.4;
+    fill: white;
+    &:hover {
+        opacity: 1;
+        transition: .5s;
+    }
+}

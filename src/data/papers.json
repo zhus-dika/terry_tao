@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "A sum-product estimate in finite fields, and applications",
+      "subjects": ["Combinatorics (math.CO)", "Number Theory (math.NT)"],
+      "photo": "sum_product.jpg",
+      "link": "https://arxiv.org/abs/math/0301343",
+      "desc": "Let A be a subset of a finite field $F := Z/qZ$ for some prime q. If |F|δ<|A|<|F|1−δ for some δ>0, then we prove the estimate $|A+A| + |A.A| geq c(delta) |A|^{1+eps}$ for some $eps = eps(delta) > 0$. This is a finite field analogue of a result of Erdos and Szemeredi. We then use this estimate to prove a Szemeredi-Trotter type theorem in finite fields, and obtain a new estimate for the Erdos distance problem in finite fields, as well as the three-dimensional Kakeya problem in finite fields."
+    },
+    {
+      "id": 2,
+      "title": "Multi-linear operators given by singular multipliers",
+      "subjects": ["Classical Analysis", "ODEs (math.CA)"],
+      "photo": "multi-linear.jpg",
+      "link": "https://arxiv.org/abs/math/9910039",
+      "desc": "We prove L^p estimates for a large class of multi-linear operators, which includes the multi-linear paraproducts studied by Coifman and Meyer, as well as the bilinear Hilbert transform."
+    },
+    {
+      "id": 3,
+      "title": "Robust Uncertainty Principles: Exact Signal Reconstruction from Highly Incomplete Frequency Information",
+      "subjects": ["Numerical Analysis (math.NA)", "Classical Analysis and ODEs (math.CA)"],
+      "photo": "robust.jpg",
+      "link": "https://arxiv.org/abs/math/0409186",
+      "desc": "This paper considers the model problem of reconstructing an object from incomplete frequency samples. Consider a discrete-time signal $f in C^N$ and a randomly chosen set of frequencies Omega of mean size tauN. Is it possible to reconstruct f from the partial knowledge of its Fourier coefficients on the set Omega."
+    }
+  ]
+  
