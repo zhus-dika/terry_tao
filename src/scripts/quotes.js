@@ -58,7 +58,7 @@ new Vue({
         });
       },
     handleSlide(direction) {
-      let lastIdx = this.quotes.length - 1
+      let lastIdx = this.quotes.length - 2
       switch (direction) {
         case "next":
           if (this.currentIndex < lastIdx) this.currentIndex++;

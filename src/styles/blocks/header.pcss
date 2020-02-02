@@ -16,6 +16,9 @@
 }
 .nav {
     width: 65%;
+    @include tablets {
+		width: 0;
+    }
 }
 
 .nav__list {
@@ -46,6 +49,9 @@
 }
 .socials__item{
     margin-right: 15px;
+    @include tablets {
+		margin-right: 40px;
+    }
     &:last-child {
         margin-right: 0;
     }
@@ -65,7 +71,7 @@
 	position: relative;
 	height: rem(22px);
 	align-items: center;
-	//display: none;
+	display: none;
 	@include tablets {
 		display: inline-flex;
     }
@@ -74,9 +80,9 @@
 .hamburger-menu-link__bars {
 	&, &:before, &:after {
 		background: #fff;
-		width: rem(24px);
-		height: rem(5px);
-		border-radius: rem(3px);
+		width: 34px;
+		height: 5px;
+		border-radius: 3px;
 	}
 
 	&:before, &:after {
@@ -120,20 +126,20 @@
     .nav__item-hidden{
         color: #ffffff;
         font-family: "Alegreya Sans";
-        font-size: rem(36px);
+        font-size: 36px;
         font-weight: 400;
     }
     .closebtn {
         position: absolute;
-        top: rem(20px);
-        right: rem(45px);
-        font-size: rem(60px);
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
         &:hover {
             opacity: 0.5;
             transition: .5s;
         }
         @include phones {
-            font-size: rem(36px);
+            font-size: 36px;
         }
         .close_img {
             width: 130%;

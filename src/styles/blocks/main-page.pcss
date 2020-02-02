@@ -43,6 +43,10 @@
     margin: 25% auto;
     display: flex;
     justify-content: space-around;
+    @include tablets {
+        flex-direction: column;
+        top: 10%;
+    }
 }
 .about-me {
     opacity: 0.7;
@@ -59,8 +63,12 @@
     font-size: 72px;
     font-weight: bolder;
     z-index: 1;
+    text-align: center;
 }
 .scroll {
+    @include tablets {
+		display: none;
+    }
     position: absolute;
     bottom: 20%;
     left: 47%;

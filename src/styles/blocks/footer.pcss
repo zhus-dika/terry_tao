@@ -42,6 +42,11 @@
     .nav {
         padding: 3% 0 8%;
         width: 90%;
+        &__list {
+            width: 100%;
+            display: flex;
+            flex-wrap: no-wrap;
+        }
     }
     .socials {
         padding-top: 5%;
@@ -61,6 +66,9 @@
             transform: translate(-50%, -50%);
             position: absolute;
         }
+        @include tablets {
+            padding-bottom: 5%; 
+        }
     }
 }
 .footer__author {
@@ -74,4 +82,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    @include tablets {
+        flex-direction: column;
+    }
 }

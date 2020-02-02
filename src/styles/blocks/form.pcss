@@ -7,16 +7,24 @@
     font-size: 36px;
     font-weight: 700;
     padding: 5% 5% 5% 0;
+    @include tablets {
+        text-align: center;
+    }
 }
 .form {
     width: 65%;
+    @include tablets {
+        width: 80%;
+        margin: auto;
+    }
+    
 }
 .form__row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8%;
-    &:last-child {
-        margin-bottom: 0;
+    @include tablets {
+        margin-bottom: 10%;
     }
 }
 .form-label {
@@ -41,6 +49,12 @@
     border-right-color: transparent;
     border-left-color: transparent;
     position: relative;
+    @include tablets {
+        width: 35vw;
+        &.textarea{
+            width: 75vw;
+        }
+    }
 }
 .icon__img {
     fill: white;
@@ -74,6 +88,9 @@
     &:hover {
         opacity: 0.3;
         transition: .5s;
+    }
+    @include tablets {
+        margin-left: 18%;
     }
 }
 ::-webkit-input-placeholder {color: white;}
