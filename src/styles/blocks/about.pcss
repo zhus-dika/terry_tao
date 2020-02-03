@@ -5,6 +5,9 @@
         height: 100%;
         align-items: center;
         position: relative;
+        @include tablets {
+            justify-content: between;
+        }
     }
 }
 .bg-about, .bg-binary {
@@ -17,12 +20,20 @@
 .description {
     width: 25%;
     padding: 5%;
+    @include tablets {
+        padding: 0;
+    }
 }
 .my-photo {
-    img {
+    &__input {
         width: 200px;
         height: 200px;
         border-radius: 50%;
+        @include tablets {
+            width: 172px;
+            height: 172px;
+            margin-bottom: 15%;
+        }
     }
     margin-bottom: 20%;
     text-align: center;
