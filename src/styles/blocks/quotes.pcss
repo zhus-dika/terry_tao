@@ -12,6 +12,9 @@
     }
     &__header {
         padding: 10% 5%;
+        @include phones {
+          padding: 5%;
+        }
     }
     .de-foliage {
         position: absolute;
@@ -26,6 +29,10 @@
     font-size: 36px;
     font-weight: 700;
     margin-right: 3%;
+    @include phones {
+      font-size: 24px;
+      text-align: center;
+    }
 }
 .quotes__list {
     display: flex;;
@@ -43,6 +50,12 @@
     line-height: 30px;
     height: 85%;
     margin-bottom: 5%;
+    @include phones {
+      font-size: 14px;
+      line-height: 16px;
+      padding-top: 45%;
+      height: auto;
+    }
 }
 .quotes__author {
     display: flex;
@@ -51,6 +64,10 @@
         height: 90px;
         border-radius: 50%;
         overflow: hidden;
+        @include phones {
+          width: 50px;
+          height: 50px;
+        }
     }
     &-avatar {
         margin-right: 5%;
@@ -62,6 +79,9 @@
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10%;
+    @include phones {
+      font-size: 16px;
+    }
 }
 .author__role {
     opacity: 0.3;
@@ -69,10 +89,21 @@
     font-family: "Alegreya Sans";
     font-size: 16px;
     font-weight: 500;
+    @include phones {
+      font-size: 14px;
+    }
 }
 .quotes__about {
     display: flex;
     flex-direction: column;
+    @include phones {
+      width: 100%;
+    }
+}
+.quotes-slider {
+  @include phones {
+    position: relative;
+  }
 }
 .quotes-slider__buttons {
     width: 125px;
@@ -86,9 +117,7 @@
       right: 28%;
     }
     @include phones {
-      top: initial;
-      bottom: 0;
-    }
+      top: 0;    }
   }
   .quotes-slider__btn {
     width: 50px;

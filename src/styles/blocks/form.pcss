@@ -1,5 +1,8 @@
 .contacts {
     position: relative;
+    @include phones {
+        height: 200vh;
+    }
 }
 .contacts__title {
     color: #ffffff;
@@ -17,7 +20,10 @@
         width: 80%;
         margin: auto;
     }
-    
+    @include phones {
+        width: 100%;
+        padding-left: 10%;
+    }
 }
 .form__row {
     display: flex;
@@ -27,6 +33,9 @@
     @include tablets {
         margin-bottom: 10%;
         width: 75vw;
+    }
+    @include phones {
+        flex-direction: column;
     }
 }
 .form-label {
@@ -58,6 +67,9 @@
         &.textarea{
             width: 75vw;
         }
+    }
+    @include phones {
+        width: 75vw;
     }
 }
 .icon__img {
@@ -95,6 +107,11 @@
     }
     @include tablets {
         margin-left: 18%;
+    }
+    @include phones {
+        width: 260px;
+        height: 60px;
+        margin-left: 0;
     }
 }
 ::-webkit-input-placeholder {color: white;}

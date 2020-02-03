@@ -40,11 +40,20 @@ new Vue({
   },
   computed: {
     currentQuote() {
+      if (screen.width < 768){
+        var str = this.quotes[this.currentIndex].text.split(".", 1)
+        this.quotes[this.currentIndex].text = str[0]
+      }
       return this.quotes[this.currentIndex];
     },
     secondQuote() {
-      if (this.currentIndex + 1 !== this.quotes.length)
-        return this.quotes[this.currentIndex + 1];
+      if (this.currentIndex + 1 !== this.quotes.length) {
+        if (screen.width < 768){
+          var str = this.quotes[this.currentIndex + 1].text.split(".", 1)
+          this.quotes[this.currentIndex + 1].text = str[0]
+        }
+          return this.quotes[this.currentIndex + 1];
+      }
       else
         return this.quotes[0];
     },
