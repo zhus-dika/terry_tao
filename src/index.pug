@@ -26,7 +26,7 @@ html(lang="en")
                     li.nav__item-hidden
                       a.nav__item-link(href='#') #{item}
               a.closebtn(href='javascript:void(0)' onclick='closeNav()')
-                +icon('close', "close_img")
+                +icon("close", "close_img")
 
           .container.main-page__container
             header.header
@@ -46,6 +46,15 @@ html(lang="en")
                       a.socials__item-link(href='#')
                         +icon(item, "socials_img")
               a.hamburger-menu-link(onclick='openNav()' href='#')
+                script.
+                  function openNav() {
+                    document.querySelector(".hidden-menu").style.width = "100%";
+                    document.querySelector("html").style.overflow = 'hidden';
+                  }
+                  function closeNav() {
+                    document.querySelector(".hidden-menu").style.width = "0%";
+                    document.querySelector("html").style.overflow = 'visible';
+                  }
                 .hamburger-menu-link__bars
             .whoami
               .about-me Web app about

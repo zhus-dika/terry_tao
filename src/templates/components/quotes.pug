@@ -19,8 +19,8 @@ script(type="text/x-template")#quotes-display
     ) 
 script(type="text/x-template")#quotes-btns
   .quotes-slider__buttons
-    a(href="#" @click.prevent="$emit('slide', 'prev')" :class="{nactive: currentIndex === 0 }").quotes-slider__btn.quotes-slider__btn_prev
-    a(href="#" @click.prevent="$emit('slide', 'next')" :class="{nactive: currentIndex === quotes.length - 2}").quotes-slider__btn.quotes-slider__btn_next
+    button(@click.prevent="$emit('slide', 'prev')" :class="{inactive: currentIndex === 0 }").quotes-slider__btn.quotes-slider__btn_prev
+    button(@click.prevent="$emit('slide', 'next')" :class="{inactive: currentIndex === quotes.length - 2}").quotes-slider__btn.quotes-slider__btn_next
 
 script(type="text/x-template")#quotes-info
   ul.quotes__list
