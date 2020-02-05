@@ -19,7 +19,7 @@ html(lang="en")
             .bg_bg
               +image("background/background_main-page.png", "background_main-page")
           .hidden-menu
-            - var navList = ["Main", "About Terence", "Skills", "Papers", "Quotes", "Contacts"]
+            - var navList = ["Main", "About", "Skills", "Papers", "Quotes", "Contacts"]
               nav.nav
                 ul.nav__list
                   each item in navList
@@ -31,8 +31,8 @@ html(lang="en")
           .container.main-page__container
             header.header
               .logo
-                .logo_content TT
-              - var navList = ["Main", "About Terence", "Skills", "Papers", "Quotes", "Contacts"]
+                a.logo_content(href="") TT
+              - var navList = ["Main", "About", "Skills", "Papers", "Quotes", "Contacts"]
               nav.nav
                 ul.nav__list
                   each item in navList
