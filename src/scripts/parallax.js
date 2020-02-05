@@ -14,7 +14,6 @@ var parallax = (function(){
         },
         init: function(wScroll) {
             this.move(mountains, wScroll, 45)
-            console.log(wScroll)
             this.move(background, wScroll, 35)
             this.move(userBlock, wScroll, 25)
             this.move(bridge, wScroll, 20)
