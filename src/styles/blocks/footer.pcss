@@ -1,10 +1,12 @@
 .footer {
+    @include phones {
+        height: 100vh;
+    }
     &__container {
         display: flex;
         padding: 2% 0;
         @include phones {
             flex-direction: column;
-            height: 100vh;
         }
     }
     background-color: #222427;
@@ -48,7 +50,7 @@
         }
         @include phones {
             margin-right: 0;
-            padding: 30px 30px 5px;
+            padding: 10px 30px 5px;
             width: 100%;
             font-size: 14px;
         }
