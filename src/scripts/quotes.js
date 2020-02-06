@@ -4,7 +4,8 @@ const btns = {
   template: "#quotes-btns",
   props: {
     quotes: Array,
-    currentIndex: Number
+    currentIndex: Number,
+    isMobile: Boolean
   }
 };
 const display = {
@@ -15,7 +16,9 @@ const display = {
     props: {
       quotes: Array,
       currentQuote: Object,
-      currentIndex: Number    }
+      currentIndex: Number,
+      isMobile: Boolean   
+    }
   };
 const info = {
   template: "#quotes-info",
@@ -35,27 +38,28 @@ new Vue({
   data() {
     return {
       quotes: [],
-      currentIndex: 0
+      currentIndex: 0,
+      isMobile: false
     };
   },
   computed: {
     currentQuote() {
-      if (screen.width < 768){
-        var str = this.quotes[this.currentIndex].text.slice(0, 400)
+      if (screen.width < 1200){
+        var str = this.quotes[this.currentIndex].text.slice(0, 700)
         this.quotes[this.currentIndex].text = str
       }
       return this.quotes[this.currentIndex];
     },
     secondQuote() {
       if (this.currentIndex + 1 !== this.quotes.length) {
-        if (screen.width < 768){
-          var str = this.quotes[this.currentIndex + 1].text.slice(0, 400)
+        if (screen.width < 1200){
+          var str = this.quotes[this.currentIndex + 1].text.slice(0, 700)
           this.quotes[this.currentIndex + 1].text = str
         }
           return this.quotes[this.currentIndex + 1];
       }
       else
-        return this.quotes[0];
+        return this.quotes[this.currentIndex];
     },
   },
   methods: {
@@ -68,9 +72,10 @@ new Vue({
       },
     handleSlide(direction) {
       let lastIdx = this.quotes.length - 2
+      if (screen.width < 768) this.isMobile = true
       switch (direction) {
         case "next":
-          if (this.currentIndex < lastIdx) this.currentIndex++;
+          if (this.currentIndex < lastIdx || this.isMobile && this.currentIndex === lastIdx) this.currentIndex++; 
           break;
         case "prev":
           if (this.currentIndex > 0) this.currentIndex--;

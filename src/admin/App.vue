@@ -15,7 +15,7 @@
               each item in navList
                 li.nav__item
                   a.nav__item-link(href='#') #{item}
-        .about__content
+        //-.about__content
           .section__title "About" block
           .add_group
             .add__icon  
@@ -25,13 +25,7 @@
               form.new-group__form(action='')
                 .form__row
                   .form-input__wrapper
-                    input.form-input(name='name' type='text' placeholder="Group's name")
-                  button.submit__btn
-                    //- var icon = require("../images/icons/tick.svg");
-                      //svg(class="submit__btn-img" viewBox=icon.viewBox preserveAspectRatio="none")
-                        use(xlink:href=icon.url)
+                    input.form-input(name='name' type='text' placeholder="Group's name")-//
 
-          
-      
         
 </template>
