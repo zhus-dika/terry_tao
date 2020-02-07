@@ -25,6 +25,13 @@ html(lang="en")
                   each item in navList
                     li.nav__item-hidden
                       a.nav__item-link(href='#') #{item}
+            - var socialList = ["linkedin-logo", "vk", "github"]
+              .socials
+                ul.socials__list
+                  each item in socialList
+                    li.socials__item
+                      a.socials__item-link(href='#')
+                        +icon(item, "socials_img")
               a.closebtn(href='javascript:void(0)' onclick='closeNav()')
                 +icon("close", "close_img")
 
@@ -48,11 +55,15 @@ html(lang="en")
               a.hamburger-menu-link(onclick='openNav()' href='#')
                 script.
                   function openNav() {
-                    document.querySelector(".hidden-menu").style.width = "100%";
+                    if (screen.width < 768)
+                      document.querySelector(".hidden-menu").style.width = "100%";
+                    else document.querySelector(".hidden-menu").style.width = "50%";
+                    document.querySelector(".whoami").style.display = 'none';
                     document.querySelector("html").style.overflow = 'hidden';
                   }
                   function closeNav() {
                     document.querySelector(".hidden-menu").style.width = "0%";
+                    document.querySelector(".whoami").style.display = 'flex';
                     document.querySelector("html").style.overflow = 'visible';
                   }
                 .hamburger-menu-link__bars

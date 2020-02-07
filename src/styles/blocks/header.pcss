@@ -64,7 +64,6 @@
 }
 .socilas {
     width: 20%;
-
 }
 .socials__list {
     display: flex;
@@ -139,28 +138,31 @@
 }
 .hidden-menu {
     z-index: 100;
-    background-color: black;
+    background-color: white;
     height: 100%;
     width: 0;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     overflow-x: hidden;
     transition: 0.5s;
     .nav__list {
-        padding-top: 20%;
-        position: relative;
+        position: absolute;
+        top: 21%;
+        left: 20%;
         display: flex;
-        align-items: center;
         justify-content: space-around;
         flex-direction: column;
-        align-items: center;
         width: 100vw;
-        height: 100vh;
+        height: 40vh;
         .nav__item-link {
             font-size: 36px;
-            color: #ffffff;
+            padding: 0;
+            color: black;
             font-family: "Alegreya Sans";
+            @include phones {
+                font-size: 24px;
+            }
         }
     }
     .nav__item-hidden{
@@ -168,8 +170,9 @@
     }
     .closebtn {
         position: absolute;
+        width: 70%;
         top: 7%;
-        right: -24%;
+        left: 82%;
         color: white;
         @include phones {
             top: 3%;
@@ -183,12 +186,35 @@
             font-size: 36px;
         }
         .close_img {
-            fill: white;
+            fill: black;
             width: 10%;
             height: 10%;
             @include phones {
-                width: 16%;
-                height: 16%;
+                width: 12%;
+                height: 12%;
+            }
+        }
+    }
+    .socials {
+        position: absolute;
+        bottom: 31%;
+        right: 60%;
+        width: 20%;
+        @include phones {
+            bottom: 28%;
+        }
+        &_img{
+            height: 30px; 
+            width: 30px; 
+            fill: black;
+            &:hover {
+                opacity: 1;
+                transition: .5s;
+            }
+        }
+        &__list {
+            @include phones {
+                display: flex;
             }
         }
     }
