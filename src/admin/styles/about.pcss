@@ -1,0 +1,285 @@
+.about {
+    background: url('../images/background/Mountain_Baloon.png');
+    background-size: cover;
+    &__container {
+        margin-bottom: 7%;
+    }
+}
+.nav {
+    background: white;
+    &__list {
+        display: flex;
+        align-items: center;
+        padding-top: 2%;
+      }
+      &__item {
+        margin-right: 5%;
+        padding-bottom: 2%;
+        width: 125px;
+        text-align: center;
+        z-index: 10;
+        &:last-child {
+            margin-right: 0;
+        }
+        &.active {
+            border-bottom: 3px solid #383bcf;
+            .nav__item-link {
+                color: #383bcf;
+            }
+        }
+        &-link {
+            color: #414c63;
+            font-family: "Alegreya Sans";
+            font-size: 16px;
+            font-weight: 400;
+            text-decoration: none;
+        }
+      }
+}
+.about {
+    background-color:  #f7f9fe;
+}
+.content-header {
+    padding: 5% 0;
+    display: flex;
+}
+.section__title {
+    color: #414c63;
+    font-family: "Alegreya Sans";
+    font-size: 21px;
+    font-weight: 700;
+    margin-right: 5%;
+}
+.add-group {
+    &__wrapper {
+        height: 21px;
+        width: 21px;
+    }
+    display: flex;
+    &__button {
+        color: #383bcf;
+        font-family: "Alegreya Sans";
+        font-size: 16px;
+        font-weight: 800;
+        background: transparent;
+        border: none;
+        width: 10vw;
+    }
+    &__icon {
+        width: 90%;
+        height: 90%;
+        background: #383bcf;
+        border: none;
+        border-radius: 50%;
+        position: relative;
+        margin-right: 15px;
+        &:active {
+            margin-top: -3px;  
+        }
+        &:hover {
+            opacity: .8;
+        }
+        &:before {
+            content: '';
+            display: block;
+            background: #fff;
+            width: 12px;
+            height: 2px;
+            border-radius: 3px;
+            position: absolute;
+            top: 44%;
+            left: 21%;
+        }
+        &:after {
+            content: '';
+            display: block;
+            background: #fff;
+            width: 2px;
+            height: 12px;
+            border-radius: 3px;
+            position: absolute;
+            top: 21%;
+            left: 45%;
+        }
+    }
+}
+.group{
+    background: white;
+    width: 475px;
+    height: 387px;
+    padding: 3%;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    &__form {
+        margin: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &.full {
+            .form-input__group{
+                ::-webkit-input-placeholder {color: black; opacity: 1;}
+                ::-moz-placeholder          {color: black; opacity: 1;}
+                :-moz-placeholder           {color: black; opacity: 1;}
+                :-ms-input-placeholder      {color: black; opacity: 1;}
+            }
+        }
+    }
+}
+.form-input__group {
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 0;
+    border-bottom: 1px solid rgb(31, 35, 45, .15);
+    &-name {
+        width: 50%;
+        height: 110%;
+        border: none;
+        font-size: 18px;
+        border-bottom: 1px solid black;
+    }
+}
+.form-group__buttons {
+    display: flex;
+    width: 10%;
+    height: 100%;
+}
+.form-button{
+    &__submit {
+        width: 15px;
+        background: transparent;
+        border: none;
+        background: svg-load('tick.svg', fill=#00d70a) center center no-repeat;
+        margin-right: 20px;
+        &:active {
+            margin-top: -3px;
+        }
+    }
+    &__reset {
+        width: 15px;
+        background: transparent;
+        border: none;
+        background: svg-load('close.svg', fill=#bf2929) center center no-repeat;
+        &:active {
+            margin-top: -3px;
+        }
+    }
+    &__delete {
+        width: 15px;
+        height: 15px;
+        background: transparent;
+        border: none;
+        opacity: .5;
+        background: svg-load('trash.svg', fill=#414c63) center center no-repeat;
+        background-size: cover;
+        &:active {
+            margin-top: -3px;
+        }
+        &:hover {
+            opacity: .8;
+        }
+    }
+    &__edit {
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        opacity: .5;
+        background: svg-load('pencil.svg', fill=#414c63) center center no-repeat;
+        background-size: cover;
+        margin-right: 25%;
+        &:active {
+            margin-top: -3px;
+        }
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
+.form-input__new-skill {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3% 0;
+}
+.form-input__skill-name {
+    width: 218px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-right: 20px;
+}
+.form__skill-value {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 5%;
+}
+.form-input__skill-value {
+    width: 50px;
+    border: none;
+}
+.form-button__add {
+    width: 90%;
+    height: 90%;
+    background: #383bcf;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    &__wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    &:before {
+        content: '';
+        display: block;
+        background: #fff;
+        width: 15px;
+        height: 2px;
+        border-radius: 3px;
+        position: absolute;
+        top: 48%;
+        left: 29%;
+    }
+    &:after {
+        content: '';
+        display: block;
+        background: #fff;
+        width: 2px;
+        height: 15px;
+        border-radius: 3px;
+        position: absolute;
+        top: 31%;
+        left: 47%;
+    }
+    &:active {
+        margin-top: -3px;
+    }
+    &:hover {
+        opacity: .8;
+    }
+}
+.about__groups {
+    display: flex;
+    justify-content: space-between;
+    color: #414c63;
+    font-family: "Alegreya Sans";
+    font-weight: 400;
+}
+.current-points{
+    &__list {
+        height: 235px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.form-input__skill {
+    color: #414c63;
+    font-family: "Alegreya Sans";
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    width: 60%;
+}
