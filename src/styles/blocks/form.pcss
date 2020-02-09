@@ -1,5 +1,8 @@
 .contacts {
     position: relative;
+    @include phones {
+        height: 200vh;
+    }
 }
 .contacts__title {
     color: #ffffff;
@@ -7,16 +10,32 @@
     font-size: 36px;
     font-weight: 700;
     padding: 5% 5% 5% 0;
+    @include tablets {
+        text-align: center;
+    }
 }
 .form {
     width: 65%;
+    @include tablets {
+        width: 80%;
+        margin: auto;
+    }
+    @include phones {
+        width: 100%;
+        padding-left: 10%;
+    }
 }
 .form__row {
     display: flex;
+    width: 60vw;
     justify-content: space-between;
     margin-bottom: 8%;
-    &:last-child {
-        margin-bottom: 0;
+    @include tablets {
+        margin-bottom: 10%;
+        width: 75vw;
+    }
+    @include phones {
+        flex-direction: column;
     }
 }
 .form-label {
@@ -33,14 +52,25 @@
 }
 .form-input__wrapper {
     display: flex;
-    margin-right: 15%;
     padding-bottom: 5%;
-    width: 170%;
+    width: 25vw;
+    &.textarea{
+        width: 60vw;
+    }
     border: 2px solid white;
     border-top-color: transparent;
     border-right-color: transparent;
     border-left-color: transparent;
     position: relative;
+    @include tablets {
+        width: 35vw;
+        &.textarea{
+            width: 75vw;
+        }
+    }
+    @include phones {
+        width: 75vw;
+    }
 }
 .icon__img {
     fill: white;
@@ -74,6 +104,14 @@
     &:hover {
         opacity: 0.3;
         transition: .5s;
+    }
+    @include tablets {
+        margin-left: 18%;
+    }
+    @include phones {
+        width: 260px;
+        height: 60px;
+        margin-left: 0;
     }
 }
 ::-webkit-input-placeholder {color: white;}

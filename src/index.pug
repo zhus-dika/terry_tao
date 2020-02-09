@@ -18,12 +18,28 @@ html(lang="en")
               +image("background/bridge.png", "bridge")
             .bg_bg
               +image("background/background_main-page.png", "background_main-page")
-            .parallax__content
+          .hidden-menu
+            - var navList = ["Main", "About", "Skills", "Papers", "Quotes", "Contacts"]
+              nav.nav
+                ul.nav__list
+                  each item in navList
+                    li.nav__item-hidden
+                      a.nav__item-link(href='#') #{item}
+            - var socialList = ["linkedin-logo", "vk", "github"]
+              .socials
+                ul.socials__list
+                  each item in socialList
+                    li.socials__item
+                      a.socials__item-link(href='#')
+                        +icon(item, "socials_img")
+              a.closebtn(href='javascript:void(0)' onclick='closeNav()')
+                +icon("close", "close_img")
+
           .container.main-page__container
             header.header
               .logo
-                .logo_content TT
-              - var navList = ["Main", "About Terence", "Skills", "Papers", "Quotes", "Contacts"]
+                a.logo_content(href="") TT
+              - var navList = ["Main", "About", "Skills", "Papers", "Quotes", "Contacts"]
               nav.nav
                 ul.nav__list
                   each item in navList
@@ -36,6 +52,21 @@ html(lang="en")
                     li.socials__item
                       a.socials__item-link(href='#')
                         +icon(item, "socials_img")
+              a.hamburger-menu-link(onclick='openNav()' href='#')
+                script.
+                  function openNav() {
+                    if (screen.width < 768)
+                      document.querySelector(".hidden-menu").style.width = "100%";
+                    else document.querySelector(".hidden-menu").style.width = "50%";
+                    document.querySelector(".whoami").style.display = 'none';
+                    document.querySelector("html").style.overflow = 'hidden';
+                  }
+                  function closeNav() {
+                    document.querySelector(".hidden-menu").style.width = "0%";
+                    document.querySelector(".whoami").style.display = 'flex';
+                    document.querySelector("html").style.overflow = 'visible';
+                  }
+                .hamburger-menu-link__bars
             .whoami
               .about-me Web app about
               .whoami__title Terence Tao
@@ -124,7 +155,7 @@ html(lang="en")
                       .form_column
                         label.form__block(for='')
                           .form-label.mail Mail
-                          .form-input__wrapper
+                          .form-input__wrapper.textarea
                             .icon__img
                               +icon("message", "form-input__message")
                             textarea.form-input(name='name' type='text' placeholder='Your message' rows="3" cols = "43")

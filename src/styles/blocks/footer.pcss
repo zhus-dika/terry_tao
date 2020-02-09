@@ -1,7 +1,13 @@
 .footer {
+    @include phones {
+        height: 100vh;
+    }
     &__container {
         display: flex;
         padding: 2% 0;
+        @include phones {
+            flex-direction: column;
+        }
     }
     background-color: #222427;
     position: absolute;
@@ -16,6 +22,10 @@
         font-family: "Alegreya Sans";
         font-weight: bold;
         line-height: 30px;
+        @include phones {
+            width: 90%;
+            font-size: 14px;
+        }
     }
     &__copyright {
         width: 100%;
@@ -38,15 +48,46 @@
             font-weight: 700;
             text-transform: uppercase;
         }
+        @include phones {
+            margin-right: 0;
+            padding: 10px 30px 5px;
+            width: 100%;
+            font-size: 14px;
+        }
     }
     .nav {
         padding: 3% 0 8%;
         width: 90%;
+        &__list {
+            width: 80%;
+            display: flex;
+            flex-wrap: no-wrap;
+        }
+        &__item-link {
+            &:focus {
+                border: 1px solid #f29400;
+            }
+        }
+        @include phones {
+            &__item{
+                width: 50%;
+                margin-bottom: 5%;
+            }
+            margin: 0;
+            padding-left: 30px;
+            padding-bottom: 5px;
+        }
     }
     .socials {
         padding-top: 5%;
         display: flex;
         justify-content: flex-start;
+        &__list {
+            @include phones {
+                padding: 0;
+                display: flex;
+            }
+        }
         &__item {
             position: relative;
             width: 50px;
@@ -61,6 +102,9 @@
             transform: translate(-50%, -50%);
             position: absolute;
         }
+        @include tablets {
+            padding-bottom: 5%; 
+        }
     }
 }
 .footer__author {
@@ -69,9 +113,16 @@
     font-family: "Alegreya Sans";
     font-size: 16px;
     font-style: italic;
+    @include phones {
+        font-size: 14px;
+    }
 }
 .footer__column-list {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    @include tablets {
+        flex-direction: column;
+        padding-left: 30px;
+    }
 }

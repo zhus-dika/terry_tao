@@ -7,6 +7,7 @@ var parallax = (function(){
         move: function(block, winScroll, strafeAmount) {
             var strafe = winScroll / -strafeAmount + '%'
             let transformString = 'translate3d(0,' + strafe + ', 0)'
+            console.log(transformString)
             var style = block.style
             style.transform = transformString;
             style.webkitTransform = transformString;

@@ -4,8 +4,9 @@ script(type="text/x-template")#quotes-container
       :quotes="quotes",
       :currentQuote="currentQuote",
       :secondQuote="secondQuote",
-      :currentIndex="currentIndex"
-      @slide="handleSlide"
+      :currentIndex="currentIndex",
+      @slide="handleSlide",
+      :isMobile="isMobile"
     )
     info(
       :currentQuote="currentQuote",
@@ -15,12 +16,13 @@ script(type="text/x-template")#quotes-display
     btns(
       :quotes="quotes",
       :currentIndex="currentIndex",
+      :isMobile="isMobile",
       @slide="direction => $emit('slide', direction)"
     ) 
 script(type="text/x-template")#quotes-btns
   .quotes-slider__buttons
-    a(href="#" @click.prevent="$emit('slide', 'prev')" :class="{active: currentIndex > 0 }").quotes-slider__btn.quotes-slider__btn_prev
-    a(href="#" @click.prevent="$emit('slide', 'next')" :class="{active: currentIndex < quotes.length - 1}").quotes-slider__btn.quotes-slider__btn_next
+    button(@click.prevent="$emit('slide', 'prev')" :class="{inactive: currentIndex === 0 }").quotes-slider__btn.quotes-slider__btn_prev
+    button(@click.prevent="$emit('slide', 'next')" :class="{inactive: currentIndex === quotes.length - 2 && !isMobile || currentIndex === quotes.length - 1 && isMobile}").quotes-slider__btn.quotes-slider__btn_next
 
 script(type="text/x-template")#quotes-info
   ul.quotes__list

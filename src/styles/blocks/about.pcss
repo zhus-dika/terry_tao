@@ -5,6 +5,13 @@
         height: 100%;
         align-items: center;
         position: relative;
+        @include tablets {
+            justify-content: space-between;
+        }
+        @include phones {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
     }
 }
 .bg-about, .bg-binary {
@@ -17,23 +24,47 @@
 .description {
     width: 25%;
     padding: 5%;
+    @include tablets {
+        padding: 0;
+    }
+    @include phones {
+        width: 100%;
+        margin-bottom: 5%;
+    }
 }
 .my-photo {
-    img {
+    &__input {
         width: 200px;
         height: 200px;
         border-radius: 50%;
+        @include tablets {
+            width: 172px;
+            height: 172px;
+            margin-bottom: 15%;
+        }
+        @include phones {
+            padding-top: 5%;
+            margin-bottom: 0;
+        }  
     }
     margin-bottom: 20%;
     text-align: center;
+    @include phones {
+        margin-bottom: 5%;
+    }  
 }
 .info {
+    @include phones {
+        width: 70vw;
+        margin: 0 auto;
+    }
     display: flex;
     justify-content: space-evenly;
     color: #fff;
     font-family: "Alegreya Sans";
     font-size: 16px;
     font-weight: 500;
+    
     &__list {
         display: flex;
         flex-direction: column;
@@ -45,6 +76,9 @@
         &:last-child {
             margin-bottom: 0;
         }
+        @include phones {
+            margin-bottom: 5%;
+        }  
     }
     &__container {
         display: flex;
@@ -55,6 +89,9 @@
         &:last-child {
             margin-bottom: 0;
         }
+        @include phones {
+            margin-bottom: 5%;
+        }  
     }
 }
 .text {
@@ -68,9 +105,19 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
+    @include phones {
+        font-size: 14px;
+        width: 80%;
+        line-height: 15px;
+        height: 100%;
+        padding-bottom: 5%;
+    } 
     &__info {
         opacity: 0.5;
         font-weight: 400;
+        @include phones {
+            font-size: 14px;
+        }  
     }
     &-description{
         opacity: 0.5;
@@ -79,4 +126,7 @@
 }
 .name-title {
     font-size: 36px;
+    @include phones {
+        font-size: 16px;
+    }
 }
