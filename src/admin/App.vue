@@ -32,44 +32,44 @@
           .group
             form.group__form(action='')
               .form-input__group
-                input.form-input__group-name(name='group' type='text' placeholder="Group's name")
+                input.form-input__group-name(name='group' type='text' placeholder="Group's name" required)
                 .form-group__buttons
-                  input.form-button__submit(name='submit') 
-                  input.form-button__reset(name='reset') 
+                  input.form-button__submit(type='submit') 
+                  input.form-button__reset(type='reset') 
               .form-input__new-skill  
-                input.form-input__skill-name(name='skill-name' type='text' placeholder="New skill") 
+                input.form-input__skill-name(name='skill-name' type='text' placeholder="New skill" required) 
                 .form__skill-value
-                  input.form-input__skill-value(name='skill-value' type='number' placeholder="100") 
+                  input.form-input__skill-value(name='skill-value' type='number' value="100") 
                   .percent-icon %
                 .form-button__add__wrapper
                   button.form-button__add(name='add-skill') 
           .group
             form.group__form.full(action='')
               .form-input__group
-                input.form-input__group-name(name='group' type='text' placeholder="Known for")
+                input.form-input__group-name(name='group' type='text' value="Known for")
                 .form-group__buttons
                   input.form-button__submit(name='submit') 
-                  input.form-button__reset(name='reset') 
+                  input.form-button__reset(name='reset' type='reset') 
               .form-input__current-points
                 - var points = ["Green-Tao theorem", "Erdos discrepancy problem", "Compressed sensing", "Tao's inequality"]
                 - var skillValues = [30, 50, 30, 100]
                   ul.current-points__list
                     each item, idx in points
                       li.current-points__item
-                        input.form-input__skill(name='group' type='text' placeholder=item)
+                        input.form-input__skill(name='group' type='text' value=item required)
                         .form__skill-value
-                          input.form-input__skill-value(name='skill-value' type='number' placeholder=skillValues[idx]) 
+                          input.form-input__skill-value(name='skill-value' type='number' value=skillValues[idx] required) 
                           .percent-icon %
                         .form-group__buttons
-                          .form-button__edit(name='edit') 
+                          .form-button__edit 
                           input.form-button__delete(name='delete')
                 .form-input__new-skill  
-                  input.form-input__skill-name(name='skill-name' type='text' placeholder="New skill") 
+                  input.form-input__skill-name(name='skill-name' type='text' placeholder="New skill" required) 
                   .form__skill-value
-                    input.form-input__skill-value(name='skill-value' type='number' placeholder="100") 
+                    input.form-input__skill-value(name='skill-value' type='number' value="100") 
                     .percent-icon %
                   .form-button__add__wrapper
-                    button.form-button__add(name='add-skill' placeholder="New skill")
+                    button.form-button__add(name='add-skill' placeholder="New skill" type='submit')
     .papers
       .container.papers__container
         .edit__paper-wrapper
@@ -84,16 +84,16 @@
               form.paper-edit__form(action='')
                 label.form__block(for='')
                   .form-label.first Name
-                  input.form-input__paper(name='paper-name' type='text' placeholder="A sum-product estimate in finite fields, and applications") 
+                  input.form-input__paper(name='paper-name' type='text' value="A sum-product estimate in finite fields, and applications" required) 
                 label.form__block(for='')
                   .form-label Link
-                  input.form-input__paper(name='paper-link' type='text' placeholder="https://arxiv.org/abs/math/0301343") 
+                  input.form-input__paper(name='paper-link' type='text' value="https://arxiv.org/abs/math/0301343" required) 
                 label.form__block(for='')
                   .form-label Description
                   textarea.form-input__paper(name='paper-desc' type='text' placeholder="Let A be a subset of a finite field $F := Z/qZ$ for some prime q. If |F|δ<|A|<|F|1−δ for some δ>0, then we prove the estimate $|A+A| + |A.A| geq c(delta) |A|^{1+eps}$ for some $eps = eps(delta) > 0$. This is a finite field analogue of a result of Erdos and Szemeredi. We then use this estimate to prove a Szemeredi-Trotter type theorem in finite fields, and obtain a new estimate for the Erdos distance problem in finite fields, as well as the three-dimensional Kakeya problem in finite fields." rows="3" cols = "43")
                 label.form__block(for='')
                   .form-label Add tag
-                  input.form-input__paper(name='paper-add_tag' type='text' placeholder="Combinatorics (math.CO), Number Theory (math.NT)") 
+                  input.form-input__paper(name='paper-add_tag' type='text' value="Combinatorics (math.CO), Number Theory (math.NT)" required) 
                 .current-tags
                   - var tags = ["Combinatorics (math.CO)", "Number Theory (math.NT)"]
                     ul.tags__list
@@ -102,8 +102,8 @@
                           .current-tag__value #{item}
                           button.current-tag__reset(name="tag__reset")
                 .form__buttons
-                  button.form__button-cancel Cancel
-                  button.form__button-save Save
+                  button.form__button-cancel(type='reset') Cancel
+                  button.form__button-save(type='submit') Save
         .papers__current 
           .papers__list
             .new-paper
@@ -143,17 +143,17 @@
                   .form__row
                     label.form__block(for='')
                       .form-label Author's name
-                      input.form-input__quote(name='author-name' type='text' placeholder="") 
+                      input.form-input__quote(name='author-name' type='text' placeholder="Albert Einstein" required) 
                     label.form__block(for='')
                       .form-label Author's occupation
-                      input.form-input__quote(name='author-occ' type='text' placeholder="") 
+                      input.form-input__quote(name='author-occ' type='text' placeholder="Great scientist" required) 
                   .form__row
                     label.form__block(for='')
                       .form-label Quote
-                      textarea.form-input__quote(name='quote' type='text' placeholder="" rows="3" cols = "43")
+                      textarea.form-input__quote(name='quote' type='text' placeholder="I believe in intuitions and inspirations. I sometimes feel that I am right. I do not know that I am." rows="3" cols = "43" required)
                 .form__buttons
-                  button.form__button-cancel Cancel
-                  button.form__button-save Save
+                  input.form__button-cancel(type='reset' value='Cancel')
+                  input.form__button-save(type='submit' value='Save')
         .quotes__list
           .new-quote
             .add-quote__wrapper-button
