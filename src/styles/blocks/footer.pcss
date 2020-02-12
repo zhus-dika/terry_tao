@@ -1,10 +1,7 @@
 .footer {
-    @include phones {
-        height: 100vh;
-    }
     &__container {
         display: flex;
-        padding: 2% 0;
+        padding: 1% 0;
         @include phones {
             flex-direction: column;
         }
@@ -14,6 +11,9 @@
     bottom: 0;
     left: 0;
     width: 100vw;
+    @include phones {
+        position: relative;
+    }
     &__paragraph {
         padding-right: 5%;
         opacity: 0.3;

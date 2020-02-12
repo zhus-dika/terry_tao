@@ -1,7 +1,9 @@
 .contacts {
-    position: relative;
+    height: 50%;
     @include phones {
-        height: 200vh;
+        &__form {
+            margin-bottom: 10%;
+        }
     }
 }
 .contacts__title {
@@ -9,7 +11,7 @@
     font-family: "Alegreya Sans";
     font-size: 36px;
     font-weight: 700;
-    padding: 5% 5% 5% 0;
+    padding: 4% 5% 4% 0;
     @include tablets {
         text-align: center;
     }
@@ -56,6 +58,7 @@
     width: 25vw;
     &.textarea{
         width: 60vw;
+        padding-bottom: 2%;
     }
     border: 2px solid white;
     border-top-color: transparent;
