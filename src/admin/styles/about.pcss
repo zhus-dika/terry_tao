@@ -146,34 +146,60 @@
     width: 10%;
     height: 100%;
 }
+.form-button__submit__wrapper{
+
+}
 .form-button{
     &__submit {
-        width: 15px;
+        &__wrapper{
+            width: 21px;
+            height: 21px;
+            margin-right: 20px;
+        }
+        width: 80%;
         color: transparent;
         background: transparent;
         border: none;
         background: svg-load('tick.svg', fill=#00d70a) center center no-repeat;
-        margin-right: 20px;
+        background-size: cover;
         &:active {
             margin-top: -3px;
         }
+        &:hover {
+            width: 100%;
+        }
     }
     &__reset {
-        width: 15px;
+        &__wrapper{
+            width: 21px;
+            height: 21px;
+            text-align: left;
+        }
+        width: 80%;
         color: transparent;
         background: transparent;
         border: none;
         background: svg-load('close.svg', fill=#bf2929) center center no-repeat;
+        background-size: cover;
         &:active {
             margin-top: -3px;
         }
+        &:hover {
+            width: 100%;
+        }
     }
     &__delete {
-        width: 15px;
-        height: 15px;
+        &__wrapper{
+            margin-right: 20px;
+            opacity: .5;
+            &:hover {
+                opacity: .8;
+            }
+        }
+        width: 20px;
+        height: 20px;
         background: transparent;
         border: none;
-        opacity: .5;
         background: svg-load('trash.svg', fill=#414c63) center center no-repeat;
         background-size: cover;
         &:active {
@@ -184,19 +210,22 @@
         }
     }
     &__edit {
+        &__wrapper{
+            margin-right: 20px;
+            opacity: .5;
+            &:hover {
+                opacity: .8;
+            }
+        }
         width: 20px;
         height: 20px;
         background: transparent;
         border: none;
-        opacity: .5;
         background: svg-load('pencil.svg', fill=#414c63) center center no-repeat;
         background-size: cover;
         margin-right: 25%;
         &:active {
             margin-top: -3px;
-        }
-        &:hover {
-            opacity: .8;
         }
     }
 }

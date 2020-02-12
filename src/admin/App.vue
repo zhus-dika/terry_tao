@@ -34,8 +34,10 @@
               .form-input__group
                 input.form-input__group-name(name='group' type='text' placeholder="Group's name" required)
                 .form-group__buttons
-                  input.form-button__submit(type='submit') 
-                  input.form-button__reset(type='reset') 
+                  .form-button__submit__wrapper
+                    input.form-button__submit(type='submit') 
+                  .form-button__reset__wrapper
+                    input.form-button__reset(type='reset') 
               .form-input__new-skill  
                 input.form-input__skill-name(name='skill-name' type='text' placeholder="New skill" required) 
                 .form__skill-value
@@ -48,8 +50,10 @@
               .form-input__group
                 input.form-input__group-name(name='group' type='text' value="Known for")
                 .form-group__buttons
-                  input.form-button__submit(name='submit') 
-                  input.form-button__reset(name='reset' type='reset') 
+                  .form-button__submit__wrapper
+                    input.form-button__submit(type='submit') 
+                  .form-button__reset__wrapper
+                    input.form-button__reset(type='reset')  
               .form-input__current-points
                 - var points = ["Green-Tao theorem", "Erdos discrepancy problem", "Compressed sensing", "Tao's inequality"]
                 - var skillValues = [30, 50, 30, 100]
@@ -61,8 +65,10 @@
                           input.form-input__skill-value(name='skill-value' type='number' value=skillValues[idx] required) 
                           .percent-icon %
                         .form-group__buttons
-                          .form-button__edit 
-                          input.form-button__delete(name='delete')
+                          .form-button__edit__wrapper
+                            button.form-button__edit(name='edit')
+                          .form-button__delete__wrapper
+                            button.form-button__delete(name='delete')
                 .form-input__new-skill  
                   input.form-input__skill-name(name='skill-name' type='text' placeholder="New skill" required) 
                   .form__skill-value
@@ -136,7 +142,8 @@
             .add__quote
               .quote__author-img 
               .new-quote__text 
-                button.add__photo(name='add__photo') Add photo
+                .add__photo-wrapper
+                  button.add__photo(name='add__photo') Add photo
             .quote-form__wrapper
               form.quote-form
                 .form__rows
