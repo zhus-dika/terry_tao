@@ -1,6 +1,6 @@
 //Существует много способов выбрать DOM узел; здесь мы получаем форму и электронную почту
 //поле ввода, а также элемент span, в который мы поместим сообщение об ошибке.
-var form  = document.getElementsByTagName('form')[0];
+var form  = document.querySelector('form');
 var email = document.getElementById('email');
 var name = document.getElementById('name');
 var message= document.getElementById('message');
