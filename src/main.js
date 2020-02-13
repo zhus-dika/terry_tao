@@ -7,4 +7,5 @@ import "./scripts/skills";
 import "./scripts/papers";
 import "./scripts/quotes";
 import "./scripts/parallax";
+import "./scripts/validation-form";
 //import "./scripts/one-page-scroll";
