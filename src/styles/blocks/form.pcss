@@ -8,44 +8,88 @@
 }
 .errorName.active {
     font-family: "Alegreya Sans";
+    border-radius: 5px 5px 5px 0;
     font-size: 16px;
     color: red;
     position: absolute;
     border-radius: 5px;
-    left: 35%;
-    top: 123%;
-    padding: 4%;
-    background: #222427;
-    @include phones {
-        left: 39%;
-        top: -127%;
-    }
-}
-.errorEmail.active {
-    font-family: "Alegreya Sans";
-    font-size: 16px;
-    color: red;
-    position: absolute;
-    border-radius: 5px;
-    left: 35%;
-    top: 123%;
+    left: 26%;
+    top: 137%;
     padding: 4%;
     background: #222427;
     @include phones {
         left: 45%;
-        top: -18%;
+        top: -88%;
     }
 }
-.errorMessage.active{
+.errorEmail.active {
+    border-radius: 5px 5px 5px 0;
     font-family: "Alegreya Sans";
     font-size: 16px;
     color: red;
     position: absolute;
-    border-radius: 5px;
-    left: 35%;
-    top: -35%;
+    left: 12%;
+    top: 137%;
     padding: 4%;
     background: #222427;
+    @include phones {
+        left: 45%;
+        top: -10%;
+    }
+}
+.errorMessage.active{
+    font-family: "Alegreya Sans";
+    border-radius: 5px 5px 5px 0;
+    font-size: 16px;
+    color: red;
+    position: absolute;
+    border-radius: 5px;
+    left: 46%;
+    bottom: -140%;
+    padding: 4%;
+    background: #222427;
+    @include tablets {
+        left: 46%;
+        bottom: 24%;
+    }
+}
+.errorEmail.active:before,
+.errorName.active:before, 
+.errorMessage.active:before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+.errorEmail.active:before, .errorName.active:before {
+    border: 16px solid transparent;
+    border-top-width: 0px;
+    border-bottom-color: #222427;
+    top: -15px;
+    left: 0;
+    width: 0;
+    height: 0;
+    @include phones {
+        left: -14%;
+        top: 32%;
+        transform: rotate(-90deg);
+    }
+}
+.errorMessage.active:before {
+    border: 17px solid transparent;
+    border-top-width: 0px;
+    border-bottom-color: #222427;
+    top: -16px;
+    left: 0;
+    width: 0;
+    height: 0;
+    @include tablets {
+        left: -8%;
+        top: 21%;
+        transform: rotate(-90deg);
+    }
+    @include phones {
+        left: -14%;
+    }
 }
 .contacts__title {
     color: #ffffff;
@@ -130,6 +174,9 @@
     border: none;
     margin-left: 16px;
     width:100%;
+    @include phones {
+        font-size: 16px;
+    }
 }
 .form__column {
     width: 50%;
