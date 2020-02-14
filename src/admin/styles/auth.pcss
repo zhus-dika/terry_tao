@@ -1,0 +1,119 @@
+.authorization {
+    height: 100vh;
+    background-color: #3c4b5e;
+    position: relative;
+    font-family: "Alegreya Sans";
+    font-size: 16px;
+}
+.auth__window {
+    position: absolute;
+    height: 517px;
+    width: 563px;
+    background: #ffffff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.auth__header {
+    padding-top: 6%;
+    color: #414c63;
+    font-size: 36px;
+    font-weight: 400;
+}
+.close-window {
+    position: absolute;
+    right: 8%;
+    top: 10%;
+    border: none;
+    background: transparent;
+    &:active {
+        margin-top: -3px;
+    }
+    &:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: svg-load('close.svg', fill=rgba(65, 76, 99, .3);) center center no-repeat;
+        background-size: cover;
+
+        &:hover {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+.form__block {
+    width: 100%;
+}
+.auth__form {
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-label {
+    opacity: 0.3;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-left: 11%;
+}
+.form-input__wrapper-login, .form-input__wrapper-password {
+    display: flex;
+    padding-bottom: 5%;
+    width: 100%;
+    border-bottom: 1px solid #414c63;
+}
+.form-input__wrapper-login:before {
+    opacity: .3;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: svg-load('user.svg', fill=rgba(65, 76, 99, .3);) center center no-repeat;
+    background-size: cover;
+    margin-right: 5%;
+}
+.form-input__wrapper-password:before {
+    opacity: .3;
+    content: '';
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: svg-load('key-pswd.svg', fill=rgba(65, 76, 99, .3);) center center no-repeat;
+    background-size: cover;
+    margin-right: 5%;
+}
+.auth__form-input{
+    width: 100%;
+    border: none;
+    color: #414c63;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 31px;
+}
+.auth__form-button__wrapper {
+    margin-top: 15%;
+}
+.auth__form-button {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    width: 347px;
+    height: 80px;
+    border-radius: 40px 5px;
+    background-color: #ffffff;
+    background-image: linear-gradient(to right, #ad00ed 0%, #5500f2 100%);
+    &:hover {
+        opacity: .7;
+        transition: .5s;
+    }
+}
