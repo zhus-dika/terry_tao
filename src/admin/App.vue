@@ -129,9 +129,9 @@
         .papers__current 
           .papers__list
             .new-paper
-              .add-paper__wrapper
-                button.add-paper(name="add-paper")
-              .paper__title Add paper
+              .add-item__wrapper-button
+                button.add-item(name="add-item")
+                  .item__title Add paper
             .current-paper
               .current-paper__content
                 .current-paper__photo
@@ -141,15 +141,13 @@
                   .current-paper__text Let A be a subset of a finite field $F := Z/qZ$ for some prime q. If |F|δ<|A|<|F|1−δ for some δ>0, then we prove the estimate $|A+A| + |A.A| geq c(delta) |A|^{1+eps}$ for some $eps = eps(delta) > 0$. This is a finite field analogue of a result of Erdos and Szemeredi. We then use this estimate to prove a Szemeredi-Trotter type theorem in finite fields, and obtain a new estimate for the Erdos distance problem in finite fields, as well as the three-dimensional Kakeya problem in finite fields.
                   .current-paper__link
                     a.current-paper__href(href= "https://arxiv.org/abs/math/0301343") https://arxiv.org/abs/math/0301343          
-                  .current-paper__buttons
-                    .current-paper__edit-content
-                      .button__name Edit
-                      .current-paper__wrapper
-                        button.current-paper__edit
-                    .current-paper__remove-content
-                      .button__name Remove
-                      .current-paper__wrapper
-                        button.current-paper__remove
+                  .buttons__wrapper
+                    .button__wrapper
+                      button.button__edit 
+                        .button__name Edit
+                    .button__wrapper
+                      button.button__remove 
+                        .button__name Remove
     .quotes
       .container.quotes__container
         .add__quote-wrapper
@@ -179,9 +177,9 @@
                   input.form__button-save(type='submit' value='Save')
         .quotes__list
           .new-quote
-            .add-quote__wrapper-button
-              button.add-quote(name="add-quote")
-            .quote__title Add quote
+            .add-item__wrapper-button
+              button.add-item(name="add-item")
+                .item__title Add quote
           .current-quote
             .current-quote__content
               .quote__author-content
@@ -191,15 +189,14 @@
                   .quote__author-name Timothy Gowers
                   .quote__author-occupation British mathematician
               .quote__content-text Tao's mathematical knowledge has an extraordinary combination of breadth and depth: he can write confidently and authoritatively on topics as diverse as partial differential equations, analytic number theory, the geometry of 3-manifolds, nonstandard analysis, group theory, model theory, quantum mechanics, probability, ergodic theory, combinatorics, harmonic analysis, image processing, functional analysis, and many others. Some of these are areas to which he has made fundamental contributions.
-              .current-paper__buttons
-                .current-paper__edit-content
-                  .button__name Edit
-                  .current-paper__wrapper
-                    button.current-paper__edit
-                .current-paper__remove-content
-                  .button__name Remove
-                  .current-paper__wrapper
-                    button.current-paper__remove
+              .buttons__wrapper
+                .button__wrapper
+                  button.button__edit 
+                    .button__name Edit
+                .button__wrapper
+                  button.button__remove 
+                    .button__name Remove
+
           
                  
 

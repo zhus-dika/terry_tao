@@ -249,44 +249,6 @@
         justify-content: space-between;
     }
 }
-.button__name {
-    opacity: 0.5;
-    color: #414c63;
-    font-size: 16px;
-    font-weight: 400;
-}
-.current-paper{
-    &__wrapper {
-        height: 21px;
-        width: 21px;
-    }
-    &__edit {
-        height: 90%;
-        width: 90%;
-        border: none;
-        background: svg-load('pencil.svg', fill=#383bcf) center center no-repeat;
-        background-size: cover;
-        &:active {
-            margin-top: -3px;
-        }
-        &:hover {
-            width: 100%;
-        }
-    }
-    &__remove {
-        height: 90%;
-        width: 90%;
-        border: none;
-        background: svg-load('remove.svg', fill=#c92e2e) center center no-repeat;
-        background-size: cover;
-        &:active {
-            margin-top: -3px;
-        }
-        &:hover {
-            width: 100%;
-        }
-    }
-}
 .current-paper__edit-content, .current-paper__remove-content {
     display: flex;
     justify-content: space-between;

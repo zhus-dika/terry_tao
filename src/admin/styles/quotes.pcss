@@ -127,12 +127,16 @@ textarea.form-input__quote {
     }
     &:hover {
         opacity: .8;
+        transition: .5;    
     }
 }
 .quote__title {
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
+    position: absolute;
+    bottom: -38%;
+    left: 23%;
 }
 .quotes__list {
     display: flex;
@@ -181,7 +185,6 @@ textarea.form-input__quote {
     align-items: center;
     height: 10vh;
     border-bottom: 1px solid rgba(31, 35, 45, .15);
-    margin-bottom: 10%;
 }
 .quote__author-text {
     display: flex;

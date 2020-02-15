@@ -45,7 +45,7 @@ new Vue({
   computed: {
     currentQuote() {
       if (screen.width < 1200){
-        var str = this.quotes[this.currentIndex].text.slice(0, 700)
+        var str = this.quotes[this.currentIndex].text.slice(0, 600)
         this.quotes[this.currentIndex].text = str
       }
       return this.quotes[this.currentIndex];
@@ -53,7 +53,7 @@ new Vue({
     secondQuote() {
       if (this.currentIndex + 1 !== this.quotes.length) {
         if (screen.width < 1200){
-          var str = this.quotes[this.currentIndex + 1].text.slice(0, 700)
+          var str = this.quotes[this.currentIndex + 1].text.slice(0, 600)
           this.quotes[this.currentIndex + 1].text = str
         }
           return this.quotes[this.currentIndex + 1];
