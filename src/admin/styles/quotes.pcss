@@ -1,0 +1,207 @@
+.quotes{
+    font-family: "Alegreya Sans";
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10%;
+    .form-label {
+        opacity: .5;
+    }
+}
+.add__quote-wrapper {
+    padding: 4%;
+    background: white;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    margin-bottom: 5%;
+}
+.add__quote {
+    padding: 50px 50px 50px 0;
+    display: flex;
+    flex-direction: column;
+}
+.quote__author-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #dee4ed;
+    margin-bottom: 15%;
+    &:after{
+        content: '';
+        display: block;
+        width: 120px;
+        height: 120px;
+        margin: auto;
+        transform: translateY(30%);
+        background: svg-load('user.svg', fill=white) center center no-repeat;
+    } 
+}
+.quote__container {
+    display: flex;
+}
+.new-quote__text {
+    margin: auto;
+} 
+.form__row {
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
+}
+.quote-form__wrapper {
+    padding-top: 50px;
+}
+.form-input__quote {
+    border: none;
+    width: 15vw;
+    border-bottom: 2px solid #414c63;
+}
+textarea.form-input__quote {
+    width: 40vw;
+}
+.add__photo {
+    &-wrapper {
+        height: 21px;
+    }
+    border: none;
+    background: transparent;
+    color: #383bcf;
+    height: 30px;
+    &:active {
+        margin-top: -3px;
+    }
+    &:hover {
+        font-size: 20px;
+    }
+}
+.form__rows {
+    margin-bottom: 5%;
+}
+.new-quote {
+    background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+    font-family: "Alegreya Sans";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 290px;
+    height: 340px;
+    padding: 5%;
+    margin-right: 2%;
+    flex-direction: column;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+}
+.add-quote__wrapper-button {
+    width: 153px;
+    height: 153px;
+    margin-bottom: 10%;
+}
+.add-quote {
+    width: 95%;
+    height: 95%;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: relative;
+    &:active {
+        margin-top: -3px;
+    }
+    &:before {
+        content: '';
+        display: block;
+        background-color: #ffffff;
+        width: 34px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    &:after {
+        content: '';
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        width: 2px;
+        height: 34px;
+        position: absolute;
+    }
+    &:hover {
+        opacity: .8;
+        transition: .5;    
+    }
+}
+.quote__title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    bottom: -38%;
+    left: 23%;
+}
+.quotes__list {
+    display: flex;
+}
+.current-quote{
+    width: 290px;
+    height: 340px;
+    padding: 5%;
+    background: white;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    .quote__author-img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0;
+    }
+    &__wrapper {
+        height: 21px;
+        width: 21px;
+    }
+    &__edit {
+        height: 90%;
+        width: 90%;
+        border: none;
+        background: svg-load('pencil.svg', fill=#383bcf) center center no-repeat;
+        background-size: cover;
+        &:active {
+            margin-top: -3px;
+        }
+    }
+    &__remove {
+        height: 90%;
+        width: 90%;
+        border: none;
+        background: svg-load('remove.svg', fill=#c92e2e) center center no-repeat;
+        background-size: cover;
+        &:active {
+            margin-top: -3px;
+        }
+    }
+}
+.quote__author-photo {
+    margin-right: 10%;
+}
+.quote__author-content {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    border-bottom: 1px solid rgba(31, 35, 45, .15);
+}
+.quote__author-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.quote__author-name {
+    color: #414c63;
+    font-size: 18px;
+    font-weight: 700;
+}
+.quote__author-occupation {
+    opacity: 0.5;
+    color: #414c63;
+    font-size: 16px;
+    font-weight: 400;
+}
+.quote__content-text {
+    margin-bottom: 10%;
+}

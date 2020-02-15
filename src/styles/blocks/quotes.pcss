@@ -1,26 +1,40 @@
-.bg-quotes_filter, .bg-park {
-  position: absolute;
-  left: 0;
-  top: 400vh;
-  width: 100%;
+.inner-wrapper {
   height: 200vh;
+  @include phones {
+    height: fit-content;
+  }
+  background: url('../images/background/quotes_filter.png'), url('../images/background/park.png') center center no-repeat, center center no-repeat;
+  background-size: cover, cover;
+  position: relative;
+  overflow-x: hidden;
+  &:before {
+    content: '';
+    height: 100%;
+    width: 100vw;
+    display: block;
+    position: absolute;
+    background: url('../images/decorative-elems/foliage.png') center no-repeat;
+    top: -20%;
+    right: -43%;
+    @include tablets { 
+      height: 70%;
+    }
+    @include phones { 
+      display: none;
+    }
+  }
 }
 .quotes {
+  height: 50%;
     &__container {
         margin: 0 auto;
-        position: relative;
-        height: 100vh;
+        height: 100%;
     }
     &__header {
-        padding: 10% 5%;
+        padding: 5%;
         @include phones {
           padding: 5%;
         }
-    }
-    .de-foliage {
-        position: absolute;
-        right: 0;
-        height: 120vh;
     }
 }
 .quotes__title {
@@ -28,7 +42,6 @@
     font-family: "Alegreya Sans";
     font-size: 36px;
     font-weight: 700;
-    margin-right: 3%;
     @include phones {
       font-size: 24px;
       text-align: center;
@@ -55,7 +68,7 @@
     font-family: "Alegreya Sans";
     font-size: 16px;
     font-weight: 500;
-    line-height: 40px;
+    line-height: 36px;
     height: 85%;
     margin-bottom: 5%;
     @include phones {
@@ -115,12 +128,12 @@
 .quotes-slider__buttons {
     width: 125px;
     position: absolute;
-    top: 11%;
-    right: 43%;
+    top: 3%;
+    right: 47%;
     display: flex;
     justify-content: space-between;
     @include tablets {
-      top: 7%;
+      top: 2%;
       right: 28%;
     }
     @include phones {

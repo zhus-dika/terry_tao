@@ -1,7 +1,94 @@
 .contacts {
-    position: relative;
+    height: 50%;
     @include phones {
-        height: 200vh;
+        &__form {
+            margin-bottom: 10%;
+        }
+    }
+}
+.errorName.active {
+    font-family: "Alegreya Sans";
+    border-radius: 5px 5px 5px 0;
+    font-size: 16px;
+    color: red;
+    position: absolute;
+    border-radius: 5px;
+    left: 26%;
+    top: 137%;
+    padding: 4%;
+    background: #222427;
+    @include phones {
+        left: 45%;
+        top: -88%;
+    }
+}
+.errorEmail.active {
+    border-radius: 5px 5px 5px 0;
+    font-family: "Alegreya Sans";
+    font-size: 16px;
+    color: red;
+    position: absolute;
+    left: 12%;
+    top: 137%;
+    padding: 4%;
+    background: #222427;
+    @include phones {
+        left: 45%;
+        top: -10%;
+    }
+}
+.errorMessage.active{
+    font-family: "Alegreya Sans";
+    border-radius: 5px 5px 5px 0;
+    font-size: 16px;
+    color: red;
+    position: absolute;
+    border-radius: 5px;
+    left: 46%;
+    bottom: -140%;
+    padding: 4%;
+    background: #222427;
+    @include tablets {
+        left: 46%;
+        bottom: 24%;
+    }
+}
+.errorEmail.active:before,
+.errorName.active:before, 
+.errorMessage.active:before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+.errorEmail.active:before, .errorName.active:before {
+    border: 16px solid transparent;
+    border-top-width: 0px;
+    border-bottom-color: #222427;
+    top: -15px;
+    left: 0;
+    width: 0;
+    height: 0;
+    @include phones {
+        left: -14%;
+        top: 32%;
+        transform: rotate(-90deg);
+    }
+}
+.errorMessage.active:before {
+    border: 17px solid transparent;
+    border-top-width: 0px;
+    border-bottom-color: #222427;
+    top: -16px;
+    left: 0;
+    width: 0;
+    height: 0;
+    @include tablets {
+        left: -8%;
+        top: 21%;
+        transform: rotate(-90deg);
+    }
+    @include phones {
+        left: -14%;
     }
 }
 .contacts__title {
@@ -9,7 +96,7 @@
     font-family: "Alegreya Sans";
     font-size: 36px;
     font-weight: 700;
-    padding: 5% 5% 5% 0;
+    padding: 4% 5% 4% 0;
     @include tablets {
         text-align: center;
     }
@@ -56,6 +143,7 @@
     width: 25vw;
     &.textarea{
         width: 60vw;
+        padding-bottom: 2%;
     }
     border: 2px solid white;
     border-top-color: transparent;
@@ -86,6 +174,12 @@
     border: none;
     margin-left: 16px;
     width:100%;
+    @include phones {
+        font-size: 16px;
+    }
+    &:active{
+        background: transparent;
+    }
 }
 .form__column {
     width: 50%;

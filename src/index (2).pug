@@ -1,0 +1,192 @@
+include ./mixins.pug
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Terence Tao | main page
+  body
+    .wrapper
+      .main-content
+        section.main-page.active
+          .parallax
+            .bg_mountains
+              +image("background/mountains.png", "mountains")
+            .bg_bridge
+              +image("background/bridge.png", "bridge")
+            .bg_bg
+              +image("background/background_main-page.png", "background_main-page")
+          .hidden-menu
+            - var navList = ["Main", "About", "Skills", "Papers", "Quotes", "Contacts"]
+              nav.nav
+                ul.nav__list
+                  each item in navList
+                    li.nav__item-hidden
+                      a.nav__item-link(href='#') #{item}
+            - var socialList = ["linkedin-logo", "vk", "github"]
+              .socials
+                ul.socials__list
+                  each item in socialList
+                    li.socials__item
+                      a.socials__item-link(href='#')
+                        +icon(item, "socials_img")
+              a.closebtn(href='javascript:void(0)' onclick='closeNav()')
+                +icon("close", "close_img")
+
+          .container.main-page__container
+            header.header
+              .logo
+                a.logo_content(href="") TT
+              - var navList = ["Main", "About", "Skills", "Papers", "Quotes", "Contacts"]
+              nav.nav
+                ul.nav__list
+                  each item in navList
+                    li.nav__item
+                      a.nav__item-link(href='#') #{item}
+              - var socialList = ["linkedin-logo", "vk", "github"]
+              .socials
+                ul.socials__list
+                  each item in socialList
+                    li.socials__item
+                      a.socials__item-link(href='#')
+                        +icon(item, "socials_img")
+              a.hamburger-menu-link(onclick='openNav()' href='#')
+                script.
+                  function openNav() {
+                    if (screen.width < 768)
+                      document.querySelector(".hidden-menu").style.width = "100%";
+                    else document.querySelector(".hidden-menu").style.width = "50%";
+                    document.querySelector(".whoami").style.display = 'none';
+                    document.querySelector("html").style.overflow = 'hidden';
+                  }
+                  function closeNav() {
+                    document.querySelector(".hidden-menu").style.width = "0%";
+                    document.querySelector(".whoami").style.display = 'flex';
+                    document.querySelector("html").style.overflow = 'visible';
+                  }
+                .hamburger-menu-link__bars
+            .whoami
+              .about-me Web app about
+              .whoami__title Terence Tao
+            .scroll
+              .scroll__name Scroll
+              a.scroll__img(href='#')
+                +icon('scroll', 'scroll__pic')
+        section.about
+          +image('background/binary.png', "bg-binary")
+          +image('background/about.png', "bg-about")
+          .container.about__conatiner
+            .description
+              .my-photo
+                +image('content/user.jpeg','my-photo__input')
+              .info
+                - var points = ["Lives", " Age", "Date of Birth"]
+                ul.info__list
+                  each item in points
+                    li.info__item #{item}
+                - var points = ["Los Angeles", "44", "17 July 1975"]
+                ul.info__container
+                  each item in points
+                    li.info__point #{item}
+            .text
+              .text__info
+                | Hi, my name is
+              h2.name-title Terence Tao
+              .text__info
+                | Terence Chi-Shen Tao is an Australian-American mathematician who has worked
+                | in various areas of mathematics. He currently focuses on harmonic analysis, partial differential
+                | equations, algebraic combinatorics, arithmetic combinatorics, geometric combinatorics,
+                | probability theory, compressed sensing and analytic number theory. As of 2015, he holds the
+                | James and Carol Collins chair in mathematics at the University of California, Los Angeles.
+              .text-description
+                | Tao was a recipient of the 2006 Fields Medal and the 2014 Breakthrough
+                | Prize in Mathematics. He is also a 2006 MacArthur Fellow. Tao has been the author or co-author
+                | of 275 research papers.
+        section.advantages
+          +image('background/wood.png', "bg-wood")
+          .container.advantages__container
+            .advantages__description
+              h2.advantages__title Tao&apos;s researches
+              p.advantages__text
+                | He currently focuses on harmonic analysis, partial differential equations, algebraic
+                | combinatorics, arithmetic combinatorics, geometric combinatorics, probability theory, compressed
+                | sensing and analytic number theory.
+            .advantages__widget
+              #skills-component
+        section.papers
+          .container.papers__container
+            .papers__section-title Papers
+            .papers__content
+              #slider-component
+                  
+        .inner-wrapper
+          section.quotes
+            .container.quotes__container
+              .quotes__header
+                h2.quotes__title Quotes about Terence
+              #quotes-component
+                
+          section.contacts  
+            .container.contacts__container    
+              .contacts__form
+                h2.contacts__title Contact Tao
+                form.form(acion='' novalidate)
+                    .form__row
+                      .form_column
+                        label.form__block(for='')
+                          .form-label Your name
+                          .form-input__wrapper
+                            .icon__img
+                              +icon("user", "form-input__username")
+                            input.form-input(id='name' name='name' type='text' placeholder='Terence Tao' minlength=4 maxlength=20 required) 
+                            span.errorName(aria-live="polite")
+                      .form_column
+                        label.form__block(for='')
+                          .form-label Your email
+                          .form-input__wrapper
+                            .icon__img
+                              +icon("envelope", "form-input__email")
+                            input.form-input(id='email' name='email' type='email' placeholder='tao@math.ucla.edu' required)
+                            span.errorEmail(aria-live="polite")
+                    .form__row
+                      .form_column
+                        label.form__block(for='')
+                          .form-label.mail Mail
+                          .form-input__wrapper.textarea
+                            .icon__img
+                              +icon("message", "form-input__message")
+                            textarea.form-input(name='message' id='message' type='text' minlength=20 maxlength=100 placeholder='Your message' rows="3" cols = "43" required)
+                            span.errorMessage(aria-live="polite")
+                    input#form-button.form-button(name='' type='submit' value='Send')  
+              footer.footer
+                .container.footer__container
+                  .footer__description
+                    .footer__copyright &copy; 2019
+                    .footer__description-author Terence Tao
+                    .footer__paragraph Terence Tao&apos;s web page
+                  .footer__right-side
+                    nav.nav
+                      ul.nav__list
+                        each item in navList
+                          li.nav__item
+                            a.nav__item-link(href='#') #{item}
+                    - var socialList = ["linkedin-logo", "vk", "github"]
+                    .footer__column-list
+                      .footer__column
+                        .footer__paragraph
+                          | For most media inquiries (as well as for publicity material
+                          | such as photos), please contact Stuart Wolpert (swolpert@support.ucla.edu) from the UCLA
+                          | office of media relations.
+                        .socials
+                          ul.socials__list
+                            each item in socialList
+                              li.socials__item
+                                a.socials__item-link
+                                  +icon(item, "socials_img")
+                      .footer_column
+                        .footer__paragraph
+                          | Logic will get you from A to B. Imagination will take you
+                          | everywhere.
+                        .footer__author Albert Einstein
+                        include ./templates/entry.pug
