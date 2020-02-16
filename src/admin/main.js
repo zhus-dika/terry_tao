@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue'
-import "./scripts/form";
+import router from './router'
+import store from './store'
 new Vue({
-  el: "#app-root",
-  render: h => h(App)
-});
+    el: "#app-root",
+    router, store,
+    render: h => h(App)  
+  });

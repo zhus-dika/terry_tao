@@ -3,6 +3,7 @@
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 10%;
+    width: 100%;
     .form-label {
         opacity: .5;
     }
@@ -60,6 +61,7 @@ textarea.form-input__quote {
     &-wrapper {
         height: 21px;
     }
+    cursor: pointer;
     border: none;
     background: transparent;
     color: #383bcf;
@@ -93,6 +95,7 @@ textarea.form-input__quote {
     margin-bottom: 10%;
 }
 .add-quote {
+    cursor: pointer;
     width: 95%;
     height: 95%;
     background: transparent;
@@ -155,26 +158,6 @@ textarea.form-input__quote {
     &__wrapper {
         height: 21px;
         width: 21px;
-    }
-    &__edit {
-        height: 90%;
-        width: 90%;
-        border: none;
-        background: svg-load('pencil.svg', fill=#383bcf) center center no-repeat;
-        background-size: cover;
-        &:active {
-            margin-top: -3px;
-        }
-    }
-    &__remove {
-        height: 90%;
-        width: 90%;
-        border: none;
-        background: svg-load('remove.svg', fill=#c92e2e) center center no-repeat;
-        background-size: cover;
-        &:active {
-            margin-top: -3px;
-        }
     }
 }
 .quote__author-photo {

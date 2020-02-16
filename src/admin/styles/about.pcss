@@ -1,46 +1,5 @@
-.about {
-    background: url('../images/background/Mountain_Baloon.png');
-    background-size: cover;
-    &__container {
-        margin-bottom: 7%;
-    }
-}
-.nav {
-    background: white;
-    &__list {
-        display: flex;
-        align-items: center;
-        padding-top: 2%;
-      }
-      &__item {
-        margin-right: 5%;
-        padding-bottom: 2%;
-        width: 125px;
-        text-align: center;
-        z-index: 10;
-        &:last-child {
-            margin-right: 0;
-        }
-        &.active {
-            border-bottom: 3px solid #383bcf;
-            .nav__item-link {
-                color: #383bcf;
-            }
-        }
-        &-link {
-            color: #414c63;
-            font-family: "Alegreya Sans";
-            font-size: 16px;
-            font-weight: 400;
-            text-decoration: none;
-        }
-      }
-}
-.about {
-    background-color:  #f7f9fe;
-}
 .content-header {
-    padding: 5% 0;
+    padding-bottom: 5%;
     display: flex;
 }
 .section__title {
@@ -53,10 +12,12 @@
 .add-group {
     &__wrapper {
         height: 21px;
-        width: 21px;
+        width: 121px;
+        position: relative;
+        display: flex;
     }
-    display: flex;
     &__button {
+        padding-left: 25%;
         color: #383bcf;
         font-family: "Alegreya Sans";
         font-size: 16px;
@@ -64,20 +25,22 @@
         background: transparent;
         border: none;
         width: 10vw;
+        cursor: pointer;
+        &:hover {
+            opacity: .8;
+        }
     }
     &__icon {
-        width: 90%;
-        height: 90%;
+        position: absolute;
+        left: 5%;
+        top: -5%;
+        width: 21px;
+        height: 21px;
         background: #383bcf;
         border: none;
         border-radius: 50%;
-        position: relative;
-        margin-right: 15px;
         &:active {
             margin-top: -3px;  
-        }
-        &:hover {
-            opacity: .8;
         }
         &:before {
             content: '';
@@ -87,7 +50,7 @@
             height: 2px;
             border-radius: 3px;
             position: absolute;
-            top: 44%;
+            top: 45%;
             left: 21%;
         }
         &:after {
@@ -151,6 +114,7 @@
 }
 .form-button{
     &__submit {
+        cursor: pointer;
         &__wrapper{
             width: 21px;
             height: 21px;
@@ -170,6 +134,7 @@
         }
     }
     &__reset {
+        cursor: pointer;
         &__wrapper{
             width: 21px;
             height: 21px;
@@ -189,6 +154,7 @@
         }
     }
     &__delete {
+        cursor: pointer;
         &__wrapper{
             margin-right: 20px;
             opacity: .5;
@@ -217,6 +183,7 @@
                 opacity: .8;
             }
         }
+        cursor: pointer;
         width: 20px;
         height: 20px;
         background: transparent;
@@ -258,6 +225,7 @@
     border: none;
     border-radius: 50%;
     position: relative;
+    cursor: pointer;
     &__wrapper {
         width: 40px;
         height: 40px;
