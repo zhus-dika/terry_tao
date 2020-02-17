@@ -1,6 +1,6 @@
 //Существует много способов выбрать DOM узел; здесь мы получаем форму и электронную почту
 //поле ввода, а также элемент span, в который мы поместим сообщение об ошибке.
-var form  = document.querySelector('form');
+var form  = document.getElementById('form');
 var email = document.getElementById('email');
 var name = document.getElementById('name');
 var message= document.getElementById('message');
@@ -59,7 +59,7 @@ form.addEventListener("submit", function (event) {
     console.log(message.value)
     if(!message.value) {
         errorMessage.innerHTML = "Message is required!";
-      } else if (message.value.length < 20 || message.value.length > 100){
+      } else if (message.value.length < 20){
         errorMessage.innerHTML = "Message is too short! Please enter message with length in range (20, 100)!";
       }
     errorMessage.className = "errorMessage active";
