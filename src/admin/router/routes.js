@@ -19,13 +19,13 @@ export default [
       meta: {
         title: "Quotes"
       }
-    }/*,
+    },
     {
       path: "/login",
-      component: () => import("components/pages/login.vue"),
+      component: () => import("../components/pages/login.vue"),
       meta: {
         public: true
       }
-    }*/
+    }
   ];
   
