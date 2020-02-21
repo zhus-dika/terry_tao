@@ -10,7 +10,6 @@
     margin-right: 5%;
 }
 .add-group {
-    position: absolute;
     left: 33%;
     top: -17%;
     &__wrapper {
@@ -115,15 +114,17 @@
         color: #414c63;
         font-size: 18px;
         font-weight: 500;
+        &:disabled {
+            background: transparent;
+        }
+        &.inactive {
+            border-bottom: 1px transparent;
+        }
     }
 }
 .form-group__buttons {
     display: flex;
-    width: 13%;
     height: 100%;
-}
-.form-button__submit__wrapper{
-
 }
 .form-button{
     &__submit {
@@ -133,8 +134,8 @@
             height: 21px;
             margin-right: 20px;
         }
-        height: 90%;
         width: 90%;
+        height: 90%;
         color: transparent;
         background: transparent;
         border: none;
@@ -173,7 +174,6 @@
     &__delete {
         cursor: pointer;
         &__wrapper{
-            margin-right: 20px;
             opacity: .5;
             &:hover {
                 opacity: .8;
@@ -194,6 +194,8 @@
     }
     &__edit {
         &__wrapper{
+            width: 23px;
+            height: 23px;
             margin-right: 20px;
             opacity: .5;
             &:hover {
@@ -201,8 +203,8 @@
             }
         }
         cursor: pointer;
-        width: 20px;
-        height: 20px;
+        width: 21px;
+        height: 21px;
         background: transparent;
         border: none;
         background: svg-load('pencil.svg', fill=#414c63) center center no-repeat;
@@ -228,6 +230,9 @@
     &.active {
         border-bottom: 1px solid black;
     }
+    &:disabled {
+        background: transparent;
+    }
     margin-right: 20px;
 }
 .form__skill-value {
@@ -244,6 +249,9 @@
     border: none;
     color: #414c63;
     height: 21px;
+    &:disabled {
+        background: transparent;
+    }
 }
 .form-button__add {
     width: 40px;

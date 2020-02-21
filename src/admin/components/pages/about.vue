@@ -4,22 +4,16 @@
       .about__content
         .content-header
           .section__title "About" block
+          .add-group
+            .add-group__wrapper
+              button.add-group__button(name='add-group__button' type="button" @click="toggleAddForm") Add group
+                .add-group__icon
         ul.about__groups
-          li.group
-            new-form-skills
+          new-form-skills(v-if="addFormVisible" @toggleAddForm="toggleAddForm")
           li.group(v-for="category in categories" :key="category.id")
-            form.group__form
-              .form-input__group
-                input.form-input__group-name(name='group' type='text' placeholder="Gruop's name" required v-model="category.category") 
-                .form-group__buttons
-                  .form-button__submit__wrapper
-                    button.form-button__submit(type="button" @click.prevent="editExistedCategory") 
-                  .form-button__reset__wrapper
-                     input.form-button__reset(type='reset') 
-              .form-input__current-points
-                skills-group(
-                  :category="category"
-                )
+            skills-group(
+              :category="category"
+            )
 </template>
 
 
@@ -37,7 +31,8 @@ export default {
       category: {
         category: '',
         skills: []
-      }
+      },
+      addFormVisible: false
     }
   },
   computed : {
@@ -51,22 +46,9 @@ export default {
     this.fetchCategories()
   },
   methods: {
-    ...mapActions("categories", ["editCategory", "deleteCategory", "fetchCategories"]),
-
-    async deleteExistedCategory() {
-      try {
-        await this.deleteCategory(this.category);
-      } catch (error) {
-        alert(error.message);
-      }
-    },
-    async editExistedCategory() {
-      try {
-        console.log(this.category)
-        await this.editCategory(this.category);
-      } catch (error) {
-        alert(error.message);
-      }
+    ...mapActions("categories", ["fetchCategories"]),
+    toggleAddForm() {
+      this.addFormVisible = !this.addFormVisible
     }
   }
 };

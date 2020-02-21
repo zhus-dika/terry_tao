@@ -6,7 +6,7 @@ export default {
   mutations: {
     SET_CATEGORIES: (state, data) => (state.categories = data),
     ADD_CATEGORY: (state, category) => {
-      state.categories.push(category) 
+      state.categories.unshift(category) 
     },
     DELETE_CATEGORY: (state, deletedCategory) => {
       state.categories = state.categories.filter(
