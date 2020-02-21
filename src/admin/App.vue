@@ -5,9 +5,10 @@
     nav.nav 
       tabs
     main.content-container
-      router-view   
+      router-view
 </template>
 <script>
+import { mapState, mapActions, mapGetters } from "vuex";
 export default {
   components: {
     appHeader: () => import("./components/header"),

@@ -2,16 +2,16 @@
   .login
     .login__content
       form(@submit.prevent="login").login__form
-        .login__form-title Авторизация
+        .login__form-title Authorization
         .login__row
           app-input(
-            title="Логин"
+            title="Login"
             icon="user"
             v-model="user.name"
           )
         .login__row
           app-input(
-            title="Пароль"
+            title="Password"
             icon="key"
             type="password"
             v-model="user.password"
@@ -19,7 +19,7 @@
         .login__btn
           button(
             type="submit"
-          ).login__send-data Отправить
+          ).login__send-data Send
 </template>
 
 <script>
@@ -55,6 +55,7 @@ export default {
 <style lang="postcss">
 @import "../../../styles/mixins.pcss";
 .login {
+  font-family: Alegreya Sans;
   position: fixed;
   top: 0;
   left: 0;
@@ -63,7 +64,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  //background: url("~images/bg/admin.jpg") center center / cover no-repeat;
+  background: url("../../../images/background/mountain_baloon-auth.png") center center / cover no-repeat;
 
   &:before {
     content: "";

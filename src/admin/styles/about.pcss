@@ -10,6 +10,9 @@
     margin-right: 5%;
 }
 .add-group {
+    position: absolute;
+    left: 33%;
+    top: -17%;
     &__wrapper {
         height: 21px;
         width: 121px;
@@ -72,6 +75,8 @@
     height: 387px;
     padding: 3%;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    margin-bottom: 5%;
+    position: relative;
     &__form {
         margin: auto;
         height: 100%;
@@ -87,9 +92,17 @@
             }
         }
     }
+    &.new {
+        display: none;
+    }
+}
+.all-groups {
+    display: flex;
+    flex-wrap: wrap;
 }
 .form-input__group {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     padding: 3% 0;
     border-bottom: 1px solid rgb(31, 35, 45, .15);
@@ -106,7 +119,7 @@
 }
 .form-group__buttons {
     display: flex;
-    width: 10%;
+    width: 13%;
     height: 100%;
 }
 .form-button__submit__wrapper{
@@ -120,7 +133,8 @@
             height: 21px;
             margin-right: 20px;
         }
-        width: 80%;
+        height: 90%;
+        width: 90%;
         color: transparent;
         background: transparent;
         border: none;
@@ -130,6 +144,7 @@
             margin-top: -3px;
         }
         &:hover {
+            height: 100%;
             width: 100%;
         }
     }
@@ -140,7 +155,8 @@
             height: 21px;
             text-align: left;
         }
-        width: 80%;
+        height: 90%;
+        width: 90%;
         color: transparent;
         background: transparent;
         border: none;
@@ -150,6 +166,7 @@
             margin-top: -3px;
         }
         &:hover {
+            height: 100%;
             width: 100%;
         }
     }
@@ -199,28 +216,38 @@
 .form-input__new-skill {
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    bottom: 5%;
     padding: 3% 0;
+    right: 5%;
 }
 .form-input__skill-name {
     width: 218px;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid transparent;
+    &.active {
+        border-bottom: 1px solid black;
+    }
     margin-right: 20px;
 }
 .form__skill-value {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid transparent;
+    &.active {
+        border-bottom: 1px solid black;
+    }
     margin-right: 5%;
 }
 .form-input__skill-value {
     width: 50px;
     border: none;
     color: #414c63;
+    height: 21px;
 }
 .form-button__add {
-    width: 90%;
-    height: 90%;
+    width: 40px;
+    height: 40px;
     background: #383bcf;
     border: none;
     border-radius: 50%;
@@ -261,21 +288,27 @@
 }
 .about__groups {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     color: #414c63;
     font-family: "Alegreya Sans";
     font-weight: 400;
 }
+.form-input__current-points {
+    height: 100%;
+}
 .current-points{
     &__list {
-        height: 235px;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        padding-top: 5%;
     }
     &__item {
+        height: 25px;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 5%;
     }
 }
 .form-input__skill {
@@ -284,5 +317,6 @@
     font-size: 16px;
     font-weight: 400;
     border: none;
-    width: 60%;
+    height: 21px;
+    width: 100%;
 }
