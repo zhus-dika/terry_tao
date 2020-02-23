@@ -61,7 +61,11 @@ export default {
       this.loading = true;
       try {
         await this.addSkill(this.skill);
-        this.skill = {}
+        this.skill = {
+          title: "",
+          percent: 0,
+          category: this.category.id
+        }
       } catch (error) {
         // handling error
       } finally {

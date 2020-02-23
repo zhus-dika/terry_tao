@@ -1,5 +1,9 @@
 import Vue from "vue";
+import axios from "axios";
 
+const $axios = axios.create({
+  baseURL: "https://webdev-api.loftschool.com/"
+});
 const btns = {
   template: "#quotes-btns",
   props: {
@@ -63,13 +67,6 @@ new Vue({
     },
   },
   methods: {
-    makeArrWithRequiredImages(data) {
-        return data.map(item => {
-          const requiredPic = require(`../images/content/${item.author_pic}`);
-          item.author_pic = requiredPic;
-          return item;
-        });
-      },
     handleSlide(direction) {
       let lastIdx = this.quotes.length - 2
       if (screen.width < 768) this.isMobile = true
@@ -83,8 +80,11 @@ new Vue({
       }
     }
   },
-  created() {
-    const data = require("../data/quotes.json");
-    this.quotes = this.makeArrWithRequiredImages(data);
+  async created() {
+    const { data } = await $axios.get("/reviews/284");
+    this.quotes = data;
+    this.quotes.map(item=>{
+      item.photo = `https://webdev-api.loftschool.com/${item.photo}`
+    })
   }
 });
