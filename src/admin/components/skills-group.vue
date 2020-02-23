@@ -25,7 +25,7 @@
     ).form-input__new-skill 
       input.form-input__skill-name.active(name='skill-name' type='text' placeholder="New skill" v-model="skill.title") 
       .form__skill-value.active
-        input.form-input__skill-value(name='skill-value' type='number' placeholder="100" v-model="skill.percent") 
+        input.form-input__skill-value(name='skill-value' type='number' placeholder="100" min="1" max="100" v-model="skill.percent") 
         .percent-icon %
       .form-button__add__wrapper
         button.form-button__add(name='add-skill' type="submit" :disabled="loading") 
@@ -52,8 +52,7 @@ export default {
       type: Object,
       default: () => {},
       required: true
-    },
-    deleteCategoryVal: Boolean
+    }
   },
   methods: {
     ...mapActions("skills", ["addSkill"]),
@@ -79,7 +78,6 @@ export default {
     },
     async deleteExistedCategory() {
       try {
-        console.log(this.category)
         await this.deleteCategory(this.category);
       } catch (error) {
         alert(error.message);

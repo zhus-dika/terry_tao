@@ -14,7 +14,7 @@ export default {
     EDIT_QUOTE: (state, editedQuote) => {
       state.quotes = state.quotes.map(quote => {
         if (editedQuote.id === quote.id) {
-          quote.title = editedQuote.title
+          quote = editedQuote
         }
         return quote
       })
@@ -22,10 +22,15 @@ export default {
   },
   actions: {
     async addQuote({ commit }, quote) {
+      const formData = new FormData()
+      Object.keys(quote).forEach(key=>{
+        const value = quote[key]
+        formData.append(key, value)
+      })
       try {
-        const { data } = await this.$axios.post("/reviews", quote);
+        const { data } = await this.$axios.post("/reviews", formData);
+        console.log(data)
         commit("ADD_QUOTE", data);
-        return data;
       } catch (error) {
         throw new Error(
           error.response.data.error || error.response.data.message
@@ -45,7 +50,12 @@ export default {
     },
     async editQuote({ commit }, editedQuote) {
       try {
-        const { data } = await this.$axios.post(`/reviews/${editedQuote.id}`, editedQuote);
+        const formData = new FormData()
+        Object.keys(editedQuote).forEach(key=>{
+          const value = editedQuote[key]
+          formData.append(key, value)
+        })
+        const { data } = await this.$axios.post(`/reviews/${editedQuote.id}`, formData);
         commit("EDIT_QUOTE", data);
       } catch (error) {
         throw new Error(
@@ -53,7 +63,6 @@ export default {
         );
       }
     },
-
     async fetchQuotes({ commit }) {
       try {
         const { data } = await this.$axios.get("/reviews/284");

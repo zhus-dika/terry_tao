@@ -14,7 +14,7 @@
     .form-input__skill-name.active
       input.form-input__skill(name='group' type='text' v-model="editedSkill.title")
     .form__skill-value.active
-      input.form-input__skill-value(name='skill-value' type='number' v-model="editedSkill.percent") 
+      input.form-input__skill-value(name='skill-value' type='number' min="1" max="100" v-model="editedSkill.percent") 
       .percent-icon %
     .form-group__buttons
       .form-button__submit__wrapper

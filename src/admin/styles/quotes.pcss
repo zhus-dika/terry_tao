@@ -19,22 +19,73 @@
     display: flex;
     flex-direction: column;
 }
-.quote__author-img {
+.quotes__form-file-input {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+  }
+.quotes__form-addphoto {
+    color: #383bcf;
+    font-weight: 600;
+  }
+  
+  .quotes__form-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 27px;
+  }
+  
+  .quotes__form-userpic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+  }
+  
+  .quotes__form-avatar-empty {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background: #dee4ed;
-    margin-bottom: 15%;
-    &:after{
-        content: '';
+    position: relative;
+  
+    &:before {
+      content: "";
+      height: 115px;
+      width: 85px;
+      background: svg-load("filled-user.svg", fill=#fff) center center no-repeat;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    &.filled {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  
+  .quotes__form-avatar-upload {
+      text-align: center;
+    position: relative;
+    &.error {
+      .quotes__avatar-error {
         display: block;
-        width: 120px;
-        height: 120px;
-        margin: auto;
-        transform: translateY(30%);
-        background: svg-load('user.svg', fill=white) center center no-repeat;
-    } 
-}
+      }
+    }
+    &:hover {
+        opacity: .7;
+        transition: .5s;
+    }
+  }
 .quote__container {
     display: flex;
 }
@@ -149,13 +200,16 @@ textarea.form-input__quote {
 }
 .quotes__list {
     display: flex;
+    flex-wrap: wrap;
 }
 .current-quote{
     width: 290px;
     height: 340px;
     padding: 5%;
+    position: relative;
     background: white;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    margin: 0 2% 2% 0;
     .quote__author-img {
         width: 50px;
         height: 50px;
