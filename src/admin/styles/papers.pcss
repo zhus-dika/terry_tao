@@ -1,5 +1,15 @@
+.papers {
+    .form-label{
+        margin: 5% 0;
+        opacity: 0.5;
+        color: #414c63;
+        font-size: 16px;
+        font-weight: 400;
+        padding-left: 0;
+    }
+}
 .edit__paper-wrapper {
-    height: fix-content;
+    height:auto;
     background: white;
     font-family: "Alegreya Sans";
     font-size: 16px;
@@ -32,6 +42,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    &-upload {
+        position: relative;
+    }
 }
 .upload{
     &-text {
@@ -39,7 +52,8 @@
         color: #414c63;
         font-size: 16px;
         font-weight: 400;
-        padding: 5%;
+        padding: 5% 5% 5% 0;
+        text-align: center;
     }
     &-photo {
         &__wrapper {
@@ -77,18 +91,12 @@
     font-size: 16px;
     font-weight: 400;
 }
-.form-label{
-    margin: 5% 0;
-    opacity: 0.5;
-    color: #414c63;
-    font-size: 16px;
-    font-weight: 400;
-}
 .form-label.first {
     margin-top: 0;
 }
 .tags__list {
     display: flex;
+    flex-wrap: wrap;
 }
 .current-tags {
     margin: 5% 0;
@@ -99,8 +107,16 @@
     border-radius: 15px;
     background-color: #f4f4f4;
     margin-right: 5%;
+    margin-bottom: 5%;
+}
+.current-tag__content{
+    display: flex;
+    justify-content: space-between;
 }
 .current-tag__reset {
+    margin-left: 10px;
+    width: 12px;
+    height: 12px;
     cursor: pointer;
     border: none;
     background: svg-load('remove.svg', fill=#414c63) center center no-repeat;
@@ -120,6 +136,7 @@
         font-size: 16px;
         font-weight: 400;
         margin-right: 10%;
+        padding: 15px 20px;
         &:active {
             margin-top: -3px;  
         }
@@ -128,8 +145,9 @@
         }
     }
     &-save{
+        position: relative;
         cursor: pointer;
-        width: 150px;
+        width: 182px;
         height: 50px;
         border-radius: 25px;
         background-color: #ffffff;
@@ -145,6 +163,27 @@
             opacity: .8;
         }
     }
+}
+.form__button-save-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.paper__photo-upload {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.upload-text__wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .new-paper {
     background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
@@ -211,6 +250,8 @@
     display: flex;
 }
 .current-paper {
+    margin-right: 5%;
+    margin-bottom: 5%;
     background: white;
     font-family: "Alegreya Sans";
     width: 340px;
@@ -222,8 +263,12 @@
         align-items: center;
         justify-content: space-between;
         height: 100%;
+        &.active {
+            opacity: .5;
+        }
     }
     &__description {
+        width: 90%;
         height: 90%;
         display: flex;
         flex-direction: column;

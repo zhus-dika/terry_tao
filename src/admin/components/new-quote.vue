@@ -29,7 +29,7 @@
                               .form-label-new Quote
                               textarea.form-input__quote(name='quote' type='text' placeholder="I believe in intuitions and inspirations. I sometimes feel that I am right. I do not know that I am." rows="3" cols = "43" required v-model="quote.text")
                   .form__buttons
-                      input.form__button-cancel(type='reset' value='Cancel')
+                      input.form__button-cancel(type='reset' value='Cancel' @click="cancelAddQuote")
                       input.form__button-save(type='submit' value='Save')
 </template>
 <script>
@@ -55,6 +55,9 @@ export default {
       } catch (error) {
         alert(error.message);
       }
+    },
+    cancelAddQuote(){
+      this.$emit("toggleAddForm")
     },
     renderImageFile(file) {
       const reader = new FileReader()
