@@ -50,7 +50,7 @@
     justify-content: center;
     flex-direction: column;
     @include phones {
-        width: 80vw;
+        width: 78vw;
         height: 157px;
     }
     &-upload {
@@ -176,6 +176,9 @@
         }
         &:hover {
             opacity: .8;
+        }
+        @include phones {
+            width: 10.375rem;
         }
     }
 }
@@ -317,8 +320,6 @@
         @include tablets {
             width: 315px;
             height: 190px;
-            margin-right: 3%;
-            margin-bottom: 3%; 
         }
     }
     &__title {

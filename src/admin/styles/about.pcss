@@ -31,6 +31,9 @@
         &:hover {
             opacity: .8;
         }
+        @include tablets {
+            width: 17vw;
+        }
         @include phones {
             width: 33vw;
         }
@@ -240,6 +243,9 @@
     border-bottom: 1px solid transparent;
     @include tablets {
         width: 170px;
+    }
+    @include phones {
+        width: 150px;
     }
     &.active {
         border-bottom: 1px solid black;

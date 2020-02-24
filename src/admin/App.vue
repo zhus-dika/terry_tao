@@ -2,7 +2,7 @@
   .wrapper
     header.header
       app-header
-    nav.nav 
+    nav.nav
       tabs
     main.content-container
       router-view

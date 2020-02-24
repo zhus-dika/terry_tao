@@ -42,7 +42,6 @@ export default {
 
         localStorage.setItem("token", token);
         $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
-
         this.$router.replace("/");
         
       } catch (error) {
@@ -114,6 +113,12 @@ export default {
 
 .login__row {
   margin-bottom: 35px;
+  width: 20vw;
+  margin: 0 auto;
+  margin-bottom: 10%;
+  @include tablets {
+    width: 50vw;
+  }
   @include phones {
     width: 72vw;
   }
@@ -121,7 +126,7 @@ export default {
 
 .login__btn {
   display: flex;
-  width: 100%;
+  width: auto;
   padding: 0 8%;
   justify-content: center;
   @include phones{
@@ -130,7 +135,7 @@ export default {
 }
 
 .login__send-data {
-  width: 100%;
+  width: 70%;
   padding: 30px;
   background-image: linear-gradient(to right, #ad00ed, #5500f2);
   border-radius: 40px 0 40px;
@@ -146,16 +151,18 @@ export default {
     filter: grayscale(100%);
   }
 }
-.input__elem {
-  @include phones {
-    width: 20vw;
-  }
-}
 .login__form {
   width: 563px;
+  height: 517px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 50px 77px 60px;
   background: #fff;
-
+  @include tablets {
+    width: 500px;
+    height: 480px;
+  }
   @include phones {
     width: 90vw;
     padding-right: 7%;

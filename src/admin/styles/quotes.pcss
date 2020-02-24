@@ -159,15 +159,15 @@ textarea.form-input__quote {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 290px;
-    height: 340px;
+    flex: 1 200px;
+    height: 390px;
     padding: 5%;
     margin-right: 2%;
     flex-direction: column;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
     @include tablets {
-        height: 380px;
-        width: 270px;
+        height: 460px;
+        width: 280px;
         padding: 2%;
         margin-bottom: 2%;
     }
@@ -234,13 +234,17 @@ textarea.form-input__quote {
     flex-wrap: wrap;
 }
 .current-quote{
-    width: 290px;
-    height: 340px;
+    &:nth-child(2n) {
+        margin-right: 0;
+    }
+    flex: 1 200px;
+    height: 390px;
     padding: 5%;
     position: relative;
     background: white;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
-    margin: 0 2% 2% 0;
+    margin-bottom: 2%;
+    margin-right: 2%;
     .quote__author-img {
         width: 50px;
         height: 50px;
@@ -251,8 +255,8 @@ textarea.form-input__quote {
         width: 21px;
     }
     @include tablets {
-        height: 380px;
-        width: 270px;
+        height: 460px;
+        //width: 280px;
         padding: 2%;
     }
     @include phones {

@@ -66,6 +66,8 @@ export default {
 
 
 <style lang="postcss" scoped>
+@import "../../styles/mixins.pcss";
+
 .input__error-tooltip {
   display: none;
   position: absolute;
@@ -78,12 +80,17 @@ export default {
 .input {
   display: block;
   position: relative;
-
+  width: 100%;
+  @include phones {
+    width: 76%;
+  }
   &.no-side-paddings {
     .input__elem {
       padding-right: 0;
-      padding-left: 0;
+      padding-left: 0;    
+
     }
+
   }
 
   &_labeled {
@@ -162,7 +169,6 @@ export default {
   padding: 10px 8%;
   border: none;
   border-bottom: 1px solid #1f232d;
-
   &::placeholder {
     color: rgba(55, 62, 66, 0.25);
   }

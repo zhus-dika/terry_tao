@@ -78,7 +78,6 @@ export default {
     ...mapMutations("papers", ["EDIT_PAPER"]),
     async updatePaper() {
       try {
-        console.log(this.currentPaper)
         await this.editPaper(this.currentPaper); 
         this.$emit("toggleAddEditFormFromForm",{
           updatedPaper: {}
