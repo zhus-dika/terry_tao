@@ -7,11 +7,12 @@ import categories from "./modules/categories";
 import skills from "./modules/skills";
 import quotes from "./modules/quotes";
 import papers from "./modules/papers";
+import user from "./modules/user";
 export default new Vuex.Store({
   modules: {
     categories,
     skills,
     quotes,
-    papers
+    papers, user
   }
 });

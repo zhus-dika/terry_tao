@@ -120,7 +120,7 @@ export default {
     @each $icon in (user, key) {
       &.input_icon-$(icon) {
         .input__elem {
-          //background-image: svg-load("$(icon).svg", fill=$errors-color);
+          background-image: svg-load("$(icon).svg", fill=red);
         }
       }
     }
@@ -129,7 +129,7 @@ export default {
 
 .error {
   .field__elem {
-    //border-color: $errors-color;
+    border-color: red;
   }
 
   .input__error-tooltip {

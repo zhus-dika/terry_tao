@@ -77,7 +77,26 @@ export default {
     background: $text-color;
   }
 }
-
+.form-input__wrapper-login:before {
+    opacity: .3;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: svg-load('user.svg', fill=rgba(65, 76, 99, .3);) center center no-repeat;
+    background-size: cover;
+    margin-right: 5%;
+}
+.form-input__wrapper-password:before {
+    opacity: .3;
+    content: '';
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: svg-load('key-pswd.svg', fill=rgba(65, 76, 99, .3);) center center no-repeat;
+    background-size: cover;
+    margin-right: 5%;
+}
 .login__form-title {
   font-size: 36px;
   text-align: center;

@@ -55,7 +55,7 @@ export default {
             formData.append(key, value)
           })
           const { data } = await this.$axios.post(`/works/${editedPaper.id}`, formData);
-          commit("EDIT_PAPER", data);
+          commit("EDIT_PAPER", data.work);
         } catch (error) {
           throw new Error(
             error.response.data.error || error.response.data.message

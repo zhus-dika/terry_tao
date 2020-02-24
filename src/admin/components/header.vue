@@ -6,9 +6,18 @@
             .header__title Terence Tao
             .header__name Admin panel
         .header__quit-link
-        a.quit-link(href="#") Quit
+        a.quit-link(@click="logoutUser") Quit
 </template>
 <script>
+import { mapActions } from "vuex";
 export default {
+  methods: {
+    ...mapActions("user", ["logout"]),
+    logoutUser() {
+      this.logout();
+      this.$router.replace("/login");
+    }
+  }
 };
 </script>
+

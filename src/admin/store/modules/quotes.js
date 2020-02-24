@@ -29,7 +29,6 @@ export default {
       })
       try {
         const { data } = await this.$axios.post("/reviews", formData);
-        console.log(data)
         commit("ADD_QUOTE", data);
       } catch (error) {
         throw new Error(
@@ -56,7 +55,7 @@ export default {
           formData.append(key, value)
         })
         const { data } = await this.$axios.post(`/reviews/${editedQuote.id}`, formData);
-        commit("EDIT_QUOTE", data);
+        commit("EDIT_QUOTE", data.review);
       } catch (error) {
         throw new Error(
           error.response.data.error || error.response.data.message
