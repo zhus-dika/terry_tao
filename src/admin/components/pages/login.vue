@@ -114,6 +114,9 @@ export default {
 
 .login__row {
   margin-bottom: 35px;
+  @include phones {
+    width: 72vw;
+  }
 }
 
 .login__btn {
@@ -121,6 +124,9 @@ export default {
   width: 100%;
   padding: 0 8%;
   justify-content: center;
+  @include phones{
+    width: 75%;
+  }
 }
 
 .login__send-data {
@@ -132,23 +138,29 @@ export default {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 18px;
-
+  @include phones{
+    width: 75%;
+  }
   &[disabled] {
     opacity: 0.5;
     filter: grayscale(100%);
   }
 }
-
+.input__elem {
+  @include phones {
+    width: 20vw;
+  }
+}
 .login__form {
   width: 563px;
   padding: 50px 77px 60px;
   background: #fff;
 
   @include phones {
-    width: 100%;
+    width: 90vw;
     padding-right: 7%;
     padding-left: 7%;
-    height: 100%;
+    height: 87vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -31,6 +31,9 @@
         &:hover {
             opacity: .8;
         }
+        @include phones {
+            width: 33vw;
+        }
     }
     &__icon {
         position: absolute;
@@ -78,6 +81,10 @@
     position: relative;
     @include tablets{
         width: 285px;
+        height: 387px;
+    }
+    @include phones{
+        width: 90vw;
         height: 387px;
     }
     &__form {
@@ -335,4 +342,7 @@
     border: none;
     height: 21px;
     width: 100%;
+}
+.content-container {
+
 }

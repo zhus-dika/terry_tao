@@ -27,5 +27,8 @@ export default {
 }
 .content-container {
   padding: 4%;
+  @include phones {
+    padding: 0;
+  }
 }
 </style>

@@ -18,6 +18,10 @@
     padding: 50px 50px 50px 0;
     display: flex;
     flex-direction: column;
+    @include phones {
+        text-align: center;
+        padding: 5% 0 0;
+    }
 }
 .quotes__form-file-input {
     position: absolute;
@@ -42,6 +46,9 @@
     flex-direction: column;
     align-items: center;
     margin-right: 30px;
+    @include phones {
+        margin-right: 0;
+    }
   }
   
   .quotes__form-avatar-empty {
@@ -88,6 +95,9 @@
   }
 .quote__container {
     display: flex;
+    @include phones {
+        flex-direction: column;
+    }
 }
 .new-quote__text {
     margin: auto;
@@ -97,6 +107,9 @@
     justify-content: space-between;
     width: 40vw;
     margin-bottom: 12%;
+    @include phones {
+        flex-direction: column;
+    }
 }
 .quote-form__wrapper {
     padding-top: 50px;
@@ -110,9 +123,16 @@
     border: none;
     width: 16vw;
     border-bottom: 2px solid #414c63;
+    @include phones {
+        width: 87vw;
+        border-bottom: 1px solid #414c63;
+    }
 }
 textarea.form-input__quote {
     width: 40vw;
+    @include phones {
+        width: 87vw;
+    }
 }
 .add__photo {
     &-wrapper {
@@ -150,6 +170,11 @@ textarea.form-input__quote {
         width: 270px;
         padding: 2%;
         margin-bottom: 2%;
+    }
+    @include phones {
+        width: 100vw;
+        height: 111px;
+        position: relative;
     }
 }
 .add-quote__wrapper-button {
@@ -230,6 +255,10 @@ textarea.form-input__quote {
         width: 270px;
         padding: 2%;
     }
+    @include phones {
+        width: 100vw;
+        height: 410px;
+    }
 }
 .quote__author-photo {
     margin-right: 10%;
@@ -258,4 +287,5 @@ textarea.form-input__quote {
 }
 .quote__content-text {
     margin-bottom: 10%;
+    padding: 5%;
 }
