@@ -17,6 +17,7 @@ export default {
 };
 </script>
 <style lang="postcss">
+@import "../styles/mixins.pcss";
 @import "../styles/layout/*.pcss";
 @import "./styles/fonts.pcss";
 @import "./styles/*.pcss";

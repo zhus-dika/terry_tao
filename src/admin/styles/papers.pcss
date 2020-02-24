@@ -22,6 +22,10 @@
 }
 .edit__paper {
     display: flex;
+    @include tablets {
+        flex-direction: column;
+        padding: 10%;
+    }
 }
 .form__title {
     color: #414c63;
@@ -44,6 +48,10 @@
     flex-direction: column;
     &-upload {
         position: relative;
+        @include tablets {
+            width: 100%;
+        }
+
     }
 }
 .upload{
@@ -198,6 +206,12 @@
     margin-bottom: 5%; 
     flex-direction: column;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    @include tablets {
+        width: 315px;
+        height: 556px;
+        margin-right: 3%;
+        margin-bottom: 3%; 
+    }
 }
 .add-paper__wrapper {
     width: 153px;
@@ -258,6 +272,12 @@
     width: 340px;
     height: 556px;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    @include tablets {
+        width: 315px;
+        height: 556px;
+        margin-right: 3%;
+        margin-bottom: 3%; 
+    }
     &__content {
         display: flex;
         flex-direction: column;
@@ -279,6 +299,12 @@
     &-img {
         width: 340px;
         height: 190px;
+        @include tablets {
+            width: 315px;
+            height: 190px;
+            margin-right: 3%;
+            margin-bottom: 3%; 
+        }
     }
     &__title {
         color: #414c63;

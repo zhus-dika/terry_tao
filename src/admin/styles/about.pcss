@@ -76,6 +76,10 @@
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
     margin-bottom: 5%;
     position: relative;
+    @include tablets{
+        width: 285px;
+        height: 387px;
+    }
     &__form {
         margin: auto;
         height: 100%;
@@ -227,6 +231,9 @@
     width: 218px;
     border: none;
     border-bottom: 1px solid transparent;
+    @include tablets {
+        width: 170px;
+    }
     &.active {
         border-bottom: 1px solid black;
     }
@@ -301,6 +308,7 @@
     color: #414c63;
     font-family: "Alegreya Sans";
     font-weight: 400;
+    height: 100%;
 }
 .form-input__current-points {
     height: 100%;
