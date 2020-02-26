@@ -38,10 +38,15 @@ export default {
       quotes: state => {
         return state.quotes
       }
+    }),
+    ...mapState("user", {
+      user: state => {
+        return state.user
+      }
     })
   },
   mounted() {
-    this.fetchQuotes()
+    this.fetchQuotes(this.user.id)
   },
   methods: {
     ...mapActions("quotes", ["fetchQuotes"]),

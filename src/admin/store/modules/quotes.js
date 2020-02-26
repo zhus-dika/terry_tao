@@ -62,9 +62,9 @@ export default {
         );
       }
     },
-    async fetchQuotes({ commit }) {
+    async fetchQuotes({ commit }, id) {
       try {
-        const { data } = await this.$axios.get("/reviews/284");
+        const { data } = await this.$axios.get(`/reviews/${id}`);
         commit("SET_QUOTES", data);
       } catch (error) {}
     }

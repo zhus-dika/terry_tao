@@ -42,10 +42,15 @@ export default {
       papers: state => {
         return state.papers
       }
+    }),
+    ...mapState("user", {
+      user: state => {
+        return state.user
+      }
     })
   },
   mounted() {
-    this.fetchPapers()
+    this.fetchPapers(this.user.id)
   },
   methods: {
     ...mapActions("papers", ["fetchPapers"]),

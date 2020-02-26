@@ -62,9 +62,9 @@ export default {
           );
         }
       },
-      async fetchPapers({ commit }) {
+      async fetchPapers({ commit }, id) {
         try {
-          const { data } = await this.$axios.get("/works/284");
+          const { data } = await this.$axios.get(`/works/${id}`);
           commit("SET_PAPERS", data);
         } catch (error) {}
       }

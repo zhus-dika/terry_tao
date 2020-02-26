@@ -40,10 +40,15 @@ export default {
       categories: state => {
         return state.categories
       }
+    }),
+    ...mapState("user", {
+      user: state => {
+        return state.user
+      }
     })
   },
   created() {
-    this.fetchCategories()
+    this.fetchCategories(this.user.id)
   },
   methods: {
     ...mapActions("categories", ["fetchCategories"]),
