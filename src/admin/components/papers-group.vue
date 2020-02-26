@@ -3,17 +3,21 @@
         .current-paper__photo
             img(:src="`https://webdev-api.loftschool.com/${paper.photo}`" class="current-paper-img")
         .current-paper__description
-            .current-paper__title {{paper.title}}
-            .current-paper__text {{paper.description}}
-            .current-paper__link
-                a.current-paper__href(:href= "paper.link") {{paper.link}}      
-            .buttons__wrapper
-                .button__wrapper
-                    button.button__edit(@click="editExistedPaper")
-                        .button__name Edit
-                .button__wrapper
-                    button.button__remove(@click="deleteExistedPaper") 
-                        .button__name Remove
+          .current-tags
+              paper-tags(
+                  :paperTags = "paper.techs"
+              )
+          .current-paper__title {{paper.title}}
+          .current-paper__text {{paper.description}}
+          .current-paper__link
+              a.current-paper__href(:href= "paper.link") {{paper.link}}      
+          .buttons__wrapper
+              .button__wrapper
+                  button.button__edit(@click="editExistedPaper")
+                      .button__name Edit
+              .button__wrapper
+                  button.button__remove(@click="deleteExistedPaper") 
+                      .button__name Remove
 </template>
 <script>
 import { mapActions, mapState } from "vuex";
@@ -22,6 +26,14 @@ export default {
       paper: {
           type: Object
       }
+  },
+  components: {
+        paperTags: () => import("./paper-tags")
+  },
+  computed: {
+        tags: function() {
+          return this.paper.techs.split(", ")
+        }
   },
   methods: {
     ...mapActions("papers", ["deletePaper"]),

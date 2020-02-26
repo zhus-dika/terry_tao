@@ -8,7 +8,7 @@
             :updatedPaper="updatedPaper"
             @toggleAddEditFormFromForm="toggleAddEditForm"
           )
-        ul.quotes__list
+        ul.papers__list
           li.new-paper
             .add-item__wrapper-button
               button.add-item(name="add-item" @click="toggleAddForm")
