@@ -64,7 +64,7 @@ export default {
   align-items: center;
   justify-content: center;
   background: url("../../../images/background/mountain_baloon-auth.png") center center / cover no-repeat;
-
+  z-index: 15;
   &:before {
     content: "";
     position: absolute;
