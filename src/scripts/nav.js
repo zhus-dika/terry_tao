@@ -17,24 +17,6 @@ const performTransition = sectionEq => {
     maincontent.style.transform = `translateY(${position}%)`;
   }
 }
-const scrollToSection = direction => {
-    let activeSection, i = 0, num;
-    sections.forEach(ele => {
-      if (ele.classList.contains('active')) {
-        activeSection = ele;
-        num = i;
-      }
-      i++;
-    });
-    const prevSection = activeSection.previousElementSibling;
-    const nextSection = activeSection.nextElementSibling;
-    if (direction === 'next' && nextSection) {
-      performTransition(num + 1);
-    }
-    if (direction === 'prev' && prevSection) {
-      performTransition(num - 1);
-    }
-  }
 const navItems = document.querySelectorAll('.nav__item'),
 sizeNavItems =  navItems.length;
 for(let i = 0; i < sizeNavItems; i++) {

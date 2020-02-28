@@ -11,6 +11,7 @@ html(lang="en")
     .wrapper
       .main-content
         section.main-page.active
+          <a name="main"></a>
           .parallax
             .bg_mountains
               +image("background/mountains.png", "mountains")
@@ -22,15 +23,16 @@ html(lang="en")
             - var navList = ["Main", "About", "Skills", "Papers", "Quotes", "Contacts"]
               nav.nav
                 ul.nav__list
-                  each item in navList
+                  each item,idx in navList
                     li.nav__item-hidden
-                      a.nav__item-link(href='#') #{item}
+                      a.nav__item-link(href=`#${navList[idx]}`) #{item}
             - var socialList = ["linkedin-logo", "vk", "github"]
+            - var socialRefs = ["https://www.linkedin.com/in/terence-tao-6291246/", "https://vk.com/", "https://github.com/zhus-dika"]
               .socials
                 ul.socials__list
-                  each item in socialList
+                  each item,idx in socialList
                     li.socials__item
-                      a.socials__item-link(href='#')
+                      a.socials__item-link(href=`${socialRefs[idx]}`)
                         +icon(item, "socials_img")
               a.closebtn(href='javascript:void(0)' onclick='closeNav()')
                 +icon("close", "close_img")
@@ -42,15 +44,16 @@ html(lang="en")
               - var navList = ["Main", "About", "Skills", "Papers", "Quotes", "Contacts"]
               nav.nav
                 ul.nav__list
-                  each item in navList
+                  each item,idx in navList
                     li.nav__item
-                      a.nav__item-link(href='#') #{item}
+                      a.nav__item-link(href=`#${navList[idx]}`) #{item}
               - var socialList = ["linkedin-logo", "vk", "github"]
+              - var socialRefs = ["https://www.linkedin.com/in/terence-tao-6291246/", "https://vk.com/", "https://github.com/zhus-dika"]
               .socials
                 ul.socials__list
-                  each item in socialList
+                  each item,idx in socialList
                     li.socials__item
-                      a.socials__item-link(href='#')
+                      a.socials__item-link(href=`${socialRefs[idx]}`)
                         +icon(item, "socials_img")
               a.hamburger-menu-link(onclick='openNav()' href='#')
                 script.
@@ -75,6 +78,7 @@ html(lang="en")
               a.scroll__img(href='#')
                 +icon('scroll', 'scroll__pic')
         section.about
+          <a name="About"></a>
           .container.about__conatiner
             .description
               .my-photo
@@ -103,6 +107,7 @@ html(lang="en")
                 | Prize in Mathematics. He is also a 2006 MacArthur Fellow. Tao has been the author or co-author
                 | of 275 research papers.
         section.advantages
+          <a name="Skills"></a>
           .container.advantages__container
             .advantages__description
               h2.advantages__title Tao's researches
@@ -113,6 +118,7 @@ html(lang="en")
             .advantages__widget
               #skills-component
         section.papers
+          <a name="Papers"></a>
           .container.papers__container
             .papers__section-title Papers
             .papers__content
@@ -120,12 +126,14 @@ html(lang="en")
                   
         .inner-wrapper
           section.quotes
+            <a name="Quotes"></a>
             .container.quotes__container
               .quotes__header
                 h2.quotes__title Quotes about Terence
               #quotes-component
                 
-          section.contacts  
+          section.contacts
+            <a name="Contacts"></a>  
             .container.contacts__container    
               .contacts__form
                 h2.contacts__title Contact Tao
@@ -135,7 +143,7 @@ html(lang="en")
                         label.form__block(for='')
                           .form-label Your name
                           .form-input__wrapper
-                            .icon__img
+                            .icon__img-username
                               +icon("user", "form-input__username")
                             input.form-input(id='name' name='name' type='text' placeholder='Terence Tao' minlength=4 maxlength=20 required) 
                             span.errorName(aria-live="polite")
@@ -143,7 +151,7 @@ html(lang="en")
                         label.form__block(for='')
                           .form-label Your email
                           .form-input__wrapper
-                            .icon__img
+                            .icon__img-email
                               +icon("envelope", "form-input__email")
                             input.form-input(id='email' name='email' type='email' placeholder='tao@math.ucla.edu' required)
                             span.errorEmail(aria-live="polite")
@@ -152,7 +160,7 @@ html(lang="en")
                         label.form__block(for='')
                           .form-label.mail Mail
                           .form-input__wrapper.textarea
-                            .icon__img
+                            .icon__img-message
                               +icon("message", "form-input__message")
                             textarea.form-input(name='message' id='message' type='text' minlength=20 maxlength=100 placeholder='Your message' rows="3" cols = "43" required)
                             span.errorMessage(aria-live="polite")
@@ -166,9 +174,9 @@ html(lang="en")
                   .footer__right-side
                     nav.nav
                       ul.nav__list
-                        each item in navList
+                        each item,idx in navList
                           li.nav__item
-                            a.nav__item-link(href='#') #{item}
+                            a.nav__item-link(href='`#${navList[idx]}`') #{item}
                     - var socialList = ["linkedin-logo", "vk", "github"]
                     .footer__column-list
                       .footer__column
@@ -176,11 +184,12 @@ html(lang="en")
                           | For most media inquiries (as well as for publicity material
                           | such as photos), please contact Stuart Wolpert (swolpert@support.ucla.edu) from the UCLA
                           | office of media relations.
+                        - var socialRefs = ["https://www.linkedin.com/in/terence-tao-6291246/", "https://vk.com/", "https://github.com/zhus-dika"]
                         .socials
                           ul.socials__list
-                            each item in socialList
+                            each item,idx in socialList
                               li.socials__item
-                                a.socials__item-link
+                                a.socials__item-link(href=`${socialRefs[idx]}`)
                                   +icon(item, "socials_img")
                       .footer_column
                         .footer__paragraph
