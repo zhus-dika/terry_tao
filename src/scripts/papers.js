@@ -1,5 +1,9 @@
 import Vue from "vue";
+import axios from "axios";
 
+const $axios = axios.create({
+  baseURL: "https://webdev-api.loftschool.com/"
+});
 const thumbs = {
   template: "#slider-thumbs",
   props: {
@@ -46,7 +50,7 @@ const info = {
   },
   computed: {
     tagsArray() {
-      return this.currentPaper.subjects;
+      return this.currentPaper.techs.split(',');
     }
   }
 };
@@ -70,14 +74,6 @@ new Vue({
     }
   },
   methods: {
-    makeArrWithRequiredImages(data) {
-      return data.map(item => {
-        const requiredPic = require(`../images/content/${item.photo}`);
-        item.photo = requiredPic;
-
-        return item;
-      });
-    },
     handleSlide(direction) {
       let lastIdx = this.papers.length - 1
       switch (direction) {
@@ -90,8 +86,11 @@ new Vue({
       }
     }
   },
-  created() {
-    const data = require("../data/papers.json");
-    this.papers = this.makeArrWithRequiredImages(data);
+  async created() {
+    const { data } = await $axios.get("/works/284");
+    this.papers = data;
+    this.papers.map(item=>{
+      item.photo = `https://webdev-api.loftschool.com/${item.photo}`
+    })
   }
 });

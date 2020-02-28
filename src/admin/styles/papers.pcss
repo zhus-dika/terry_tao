@@ -1,5 +1,15 @@
+.papers {
+    .form-label{
+        margin: 5% 0;
+        opacity: 0.5;
+        color: #414c63;
+        font-size: 16px;
+        font-weight: 400;
+        padding-left: 0;
+    }
+}
 .edit__paper-wrapper {
-    height: fix-content;
+    height:auto;
     background: white;
     font-family: "Alegreya Sans";
     font-size: 16px;
@@ -12,6 +22,13 @@
 }
 .edit__paper {
     display: flex;
+    @include tablets {
+        flex-direction: column;
+        padding: 10%;
+    }
+    @include phones {
+        padding: 4%;
+    }
 }
 .form__title {
     color: #414c63;
@@ -32,6 +49,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @include phones {
+        width: 78vw;
+        height: 157px;
+    }
+    &-upload {
+        position: relative;
+        @include tablets {
+            width: 100%;
+        }
+    }
 }
 .upload{
     &-text {
@@ -39,13 +66,15 @@
         color: #414c63;
         font-size: 16px;
         font-weight: 400;
-        padding: 5%;
+        padding: 5% 5% 5% 0;
+        text-align: center;
     }
     &-photo {
         &__wrapper {
             width: 154px;
             height: 54px;
         }
+        cursor: pointer;
         width: 90%;
         height: 90%;
         border-radius: 25px;
@@ -76,18 +105,12 @@
     font-size: 16px;
     font-weight: 400;
 }
-.form-label{
-    margin: 5% 0;
-    opacity: 0.5;
-    color: #414c63;
-    font-size: 16px;
-    font-weight: 400;
-}
 .form-label.first {
     margin-top: 0;
 }
 .tags__list {
     display: flex;
+    flex-wrap: wrap;
 }
 .current-tags {
     margin: 5% 0;
@@ -98,24 +121,37 @@
     border-radius: 15px;
     background-color: #f4f4f4;
     margin-right: 5%;
+    margin-bottom: 5%;
+}
+.current-tag__content{
+    display: flex;
+    justify-content: space-between;
 }
 .current-tag__reset {
+    margin-left: 10px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
     border: none;
     background: svg-load('remove.svg', fill=#414c63) center center no-repeat;
 }
+
 .form__buttons {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     height: 60px;
 }
 .form__button{
     &-cancel{
+        cursor: pointer;
         border: none;
         background: transparent;
         color: #383bcf;
         font-size: 16px;
         font-weight: 400;
         margin-right: 10%;
+        padding: 15px 20px;
         &:active {
             margin-top: -3px;  
         }
@@ -124,7 +160,9 @@
         }
     }
     &-save{
-        width: 150px;
+        position: relative;
+        cursor: pointer;
+        width: 182px;
         height: 50px;
         border-radius: 25px;
         background-color: #ffffff;
@@ -139,7 +177,31 @@
         &:hover {
             opacity: .8;
         }
+        @include phones {
+            width: 10.375rem;
+        }
     }
+}
+.form__button-save-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.paper__photo-upload {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.upload-text__wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .new-paper {
     background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
@@ -147,12 +209,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 340px;
+    margin-right: 2%;
+    width: 31%;
     height: 556px;
-    margin-right: 5%;
     margin-bottom: 5%; 
     flex-direction: column;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    @include tablets {
+        width: 47%;
+        margin-right: 3%;
+        margin-bottom: 3%; 
+    }
+    @include phones {
+        width: 100vw;
+        height: 111px;
+        position: relative;
+    }
 }
 .add-paper__wrapper {
     width: 153px;
@@ -166,6 +238,7 @@
     border-radius: 50%;
     border: 2px solid white;
     position: relative;
+    cursor: pointer;
     &:active {
         margin-top: -3px;
     }
@@ -203,21 +276,62 @@
 }
 .papers__list {
     display: flex;
+    flex-wrap: wrap;
 }
 .current-paper {
+    margin-bottom: 5%;
     background: white;
     font-family: "Alegreya Sans";
-    width: 340px;
+    margin-right: 2%;
+    width: 31%;
     height: 556px;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    position: relative;
+    .current-tags {
+        position: absolute;
+        bottom: 66%;
+        left: 5%;
+        margin: 0;
+    }
+    .current-tags__item {
+        width: 30%;
+        opacity: 0.7;
+        color: #283340;
+        font-family: "Open Sans - Semibold";
+        font-size: 10px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 2%;
+        margin: 0 1% 1% 0;
+        .current-tag__reset {
+            display: none;
+        }
+        .tags__list {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+    @include tablets {
+        width: 47%;
+        margin-right: 3%;
+        margin-bottom: 3%; 
+    }
+    @include phones {
+        width: 100vw;
+        position: relative;
+    }
     &__content {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         height: 100%;
+        &.active {
+            opacity: .5;
+        }
     }
     &__description {
+        width: 90%;
         height: 90%;
         display: flex;
         flex-direction: column;
@@ -225,8 +339,11 @@
         padding: 7%;
     }
     &-img {
-        width: 340px;
+        width: 100%;
         height: 190px;
+        @include tablets {
+            height: 190px;
+        }
     }
     &__title {
         color: #414c63;
@@ -238,6 +355,9 @@
         color: #414c63;
         font-size: 16px;
         font-weight: 400;
+        @include phones {
+            font-size: 14px;
+        }
     }
     &__href {
         color: #383bcf;
@@ -250,6 +370,7 @@
     }
 }
 .current-paper__edit-content, .current-paper__remove-content {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     width: 28%;

@@ -15,7 +15,7 @@ script(type="text/x-template")#slider-display
   .papers-slider__pics(:data-slide="currentIndex + 1")
     .papers-slider__pics-content
       .papers-slider__fullpic-container
-        img(:src="currentPaper.photo").papers-slider__fullpic
+        img(:src="`${currentPaper.photo}`").papers-slider__fullpic
         btns(
           @slide="direction => $emit('slide', direction)"
           :papers="papers"
@@ -40,19 +40,20 @@ script(type="text/x-template")#slider-thumbs
       :class="{active: currentPaper.id === paper.id }"
     )
       button.papers-slider__thumb-link
-        img(:src="paper.photo" alt="").papers-slider__thumb
+        img(:src="`${paper.photo}`" alt="").papers-slider__thumb
 
 script(type="text/x-template")#slider-info
-  .papers-slider__data
+  .papers-slider__data  
+    .papers-slider__title {{currentPaper.title}}
+      .papers-slider__desc
+        p {{currentPaper.description}}
+      .papers-slider__link 
+        +icon('link', 'link__pic')
+        a(:href="currentPaper.link").iconed-link Paper in arXiv
     tags(
       :tagsArray="tagsArray"
     )
-    .papers-slider__title {{currentPaper.title}}
-    .papers-slider__desc
-      p {{currentPaper.desc}}
-    .papers-slider__link 
-      +icon('link', 'link__pic')
-      a(:href="currentPaper.link").iconed-link Paper in arXiv
+    
 
 script(type="text/x-template")#slider-tags
   ul.papers-slider__tags

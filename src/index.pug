@@ -75,8 +75,6 @@ html(lang="en")
               a.scroll__img(href='#')
                 +icon('scroll', 'scroll__pic')
         section.about
-          +image('background/binary.png', "bg-binary")
-          +image('background/about.png', "bg-about")
           .container.about__conatiner
             .description
               .my-photo
@@ -105,10 +103,9 @@ html(lang="en")
                 | Prize in Mathematics. He is also a 2006 MacArthur Fellow. Tao has been the author or co-author
                 | of 275 research papers.
         section.advantages
-          +image('background/wood.png', "bg-wood")
           .container.advantages__container
             .advantages__description
-              h2.advantages__title Tao&apos;s researches
+              h2.advantages__title Tao's researches
               p.advantages__text
                 | He currently focuses on harmonic analysis, partial differential equations, algebraic
                 | combinatorics, arithmetic combinatorics, geometric combinatorics, probability theory, compressed
@@ -123,9 +120,6 @@ html(lang="en")
                   
         .inner-wrapper
           section.quotes
-            +image('background/park.png', "bg-park")
-            +image('background/quotes_filter.png', "bg-quotes_filter")
-            +image('decorative-elems/foliage.png','de-foliage')
             .container.quotes__container
               .quotes__header
                 h2.quotes__title Quotes about Terence
@@ -135,7 +129,7 @@ html(lang="en")
             .container.contacts__container    
               .contacts__form
                 h2.contacts__title Contact Tao
-                form.form(action='')
+                form.form(acion='' id='form' novalidate)
                     .form__row
                       .form_column
                         label.form__block(for='')
@@ -143,14 +137,16 @@ html(lang="en")
                           .form-input__wrapper
                             .icon__img
                               +icon("user", "form-input__username")
-                            input.form-input(name='name' type='text' placeholder='Terence Tao')
+                            input.form-input(id='name' name='name' type='text' placeholder='Terence Tao' minlength=4 maxlength=20 required) 
+                            span.errorName(aria-live="polite")
                       .form_column
                         label.form__block(for='')
                           .form-label Your email
                           .form-input__wrapper
                             .icon__img
                               +icon("envelope", "form-input__email")
-                            input.form-input(name='name' type='email' placeholder='tao@math.ucla.edu')
+                            input.form-input(id='email' name='email' type='email' placeholder='tao@math.ucla.edu' required)
+                            span.errorEmail(aria-live="polite")
                     .form__row
                       .form_column
                         label.form__block(for='')
@@ -158,7 +154,8 @@ html(lang="en")
                           .form-input__wrapper.textarea
                             .icon__img
                               +icon("message", "form-input__message")
-                            textarea.form-input(name='name' type='text' placeholder='Your message' rows="3" cols = "43")
+                            textarea.form-input(name='message' id='message' type='text' minlength=20 maxlength=100 placeholder='Your message' rows="3" cols = "43" required)
+                            span.errorMessage(aria-live="polite")
                     input#form-button.form-button(name='' type='submit' value='Send')  
               footer.footer
                 .container.footer__container

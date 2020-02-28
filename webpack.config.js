@@ -24,13 +24,12 @@ module.exports = (env, argv) => {
     test: /\.vue$/,
     loader: "vue-loader"
   };
-
   const js = {
     test: /\.js$/,
     loader: "babel-loader",
     exclude: /node_modules/,
     options: {
-      presets: ['@babel/preset-env'],
+      presets: ["@babel/preset-env"],
       plugins: ["@babel/plugin-syntax-dynamic-import"]
     }
   };
@@ -85,8 +84,8 @@ module.exports = (env, argv) => {
 
   const config = {
     entry: {
-      main: "./src/main.js",
-      admin: "./src/admin/main.js"
+      main: ["@babel/polyfill", "./src/main.js"],
+      admin: ["@babel/polyfill", "./src/admin/main.js"]
     },
     output: {
       path: path.resolve(__dirname, "./dist"),

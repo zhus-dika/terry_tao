@@ -30,15 +30,15 @@ script(type="text/x-template")#quotes-info
       .quotes__text {{currentQuote.text}}
       .quotes__author
           .quotes__author-avatar
-              img(:src="currentQuote.author_pic").author__avatar
+              img(:src="`${currentQuote.photo}`").author__avatar
           .quotes__about
-              h5.quotes__item-author {{currentQuote.author_name}}
-              .author__role {{currentQuote.author_occ}}
+              h5.quotes__item-author {{currentQuote.author}}
+              .author__role {{currentQuote.occ}}
     li.quotes__item
       .quotes__text {{secondQuote.text}}
       .quotes__author
           .quotes__author-avatar
-              img(:src="secondQuote.author_pic").author__avatar
+              img(:src="`${secondQuote.photo}`").author__avatar
           .quotes__about
-              h5.quotes__item-author {{secondQuote.author_name}}
-              .author__role {{secondQuote.author_occ}}
+              h5.quotes__item-author {{secondQuote.author}}
+              .author__role {{secondQuote.occ}}

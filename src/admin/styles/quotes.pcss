@@ -3,6 +3,7 @@
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 10%;
+    width: 100%;
     .form-label {
         opacity: .5;
     }
@@ -17,25 +18,86 @@
     padding: 50px 50px 50px 0;
     display: flex;
     flex-direction: column;
+    @include phones {
+        text-align: center;
+        padding: 5% 0 0;
+    }
 }
-.quote__author-img {
+.quotes__form-file-input {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+  }
+.quotes__form-addphoto {
+    color: #383bcf;
+    font-weight: 600;
+  }
+  
+  .quotes__form-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 27px;
+  }
+  
+  .quotes__form-userpic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+    @include phones {
+        margin-right: 0;
+    }
+  }
+  
+  .quotes__form-avatar-empty {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background: #dee4ed;
-    margin-bottom: 15%;
-    &:after{
-        content: '';
+    position: relative;
+  
+    &:before {
+      content: "";
+      height: 115px;
+      width: 85px;
+      background: svg-load("filled-user.svg", fill=#fff) center center no-repeat;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    &.filled {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  
+  .quotes__form-avatar-upload {
+      text-align: center;
+    position: relative;
+    &.error {
+      .quotes__avatar-error {
         display: block;
-        width: 120px;
-        height: 120px;
-        margin: auto;
-        transform: translateY(30%);
-        background: svg-load('user.svg', fill=white) center center no-repeat;
-    } 
-}
+      }
+    }
+    &:hover {
+        opacity: .7;
+        transition: .5s;
+    }
+  }
 .quote__container {
     display: flex;
+    @include phones {
+        flex-direction: column;
+    }
 }
 .new-quote__text {
     margin: auto;
@@ -43,23 +105,40 @@
 .form__row {
     display: flex;
     justify-content: space-between;
-    width: 40vw;
+    width: 38vw;
+    margin-bottom: 12%;
+    @include phones {
+        flex-direction: column;
+    }
 }
 .quote-form__wrapper {
     padding-top: 50px;
 }
+.form-label-new {
+    opacity: 0.3;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
 .form-input__quote {
     border: none;
-    width: 15vw;
+    width: 16vw;
     border-bottom: 2px solid #414c63;
+    @include phones {
+        width: 87vw;
+        border-bottom: 1px solid #414c63;
+    }
 }
 textarea.form-input__quote {
-    width: 40vw;
+    width: 38vw;
+    @include phones {
+        width: 87vw;
+    }
 }
 .add__photo {
     &-wrapper {
         height: 21px;
     }
+    cursor: pointer;
     border: none;
     background: transparent;
     color: #383bcf;
@@ -80,12 +159,24 @@ textarea.form-input__quote {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 290px;
-    height: 340px;
+    width: 22%;
+    margin-right: 1%;
+    height: auto;
     padding: 5%;
-    margin-right: 2%;
+    margin-bottom: 2%;
     flex-direction: column;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    @include tablets {
+        height: auto;
+        width: 45%;
+        padding: 2%;
+        margin-bottom: 2%;
+    }
+    @include phones {
+        width: 100vw;
+        height: 111px;
+        position: relative;
+    }
 }
 .add-quote__wrapper-button {
     width: 153px;
@@ -93,6 +184,7 @@ textarea.form-input__quote {
     margin-bottom: 10%;
 }
 .add-quote {
+    cursor: pointer;
     width: 95%;
     height: 95%;
     background: transparent;
@@ -140,13 +232,17 @@ textarea.form-input__quote {
 }
 .quotes__list {
     display: flex;
+    flex-wrap: wrap;
 }
 .current-quote{
-    width: 290px;
-    height: 340px;
+    height: auto;
+    margin-right: 1%;
     padding: 5%;
+    position: relative;
     background: white;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2%;
+    width: 22%;
     .quote__author-img {
         width: 50px;
         height: 50px;
@@ -156,25 +252,13 @@ textarea.form-input__quote {
         height: 21px;
         width: 21px;
     }
-    &__edit {
-        height: 90%;
-        width: 90%;
-        border: none;
-        background: svg-load('pencil.svg', fill=#383bcf) center center no-repeat;
-        background-size: cover;
-        &:active {
-            margin-top: -3px;
-        }
+    @include tablets {
+        width: 45%;
+        padding: 2%;
     }
-    &__remove {
-        height: 90%;
-        width: 90%;
-        border: none;
-        background: svg-load('remove.svg', fill=#c92e2e) center center no-repeat;
-        background-size: cover;
-        &:active {
-            margin-top: -3px;
-        }
+    @include phones {
+        width: 100vw;
+        height: 410px;
     }
 }
 .quote__author-photo {
@@ -204,4 +288,6 @@ textarea.form-input__quote {
 }
 .quote__content-text {
     margin-bottom: 10%;
+    padding: 5%;
+    height: auto;
 }

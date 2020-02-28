@@ -55,7 +55,16 @@ function openNav() {
           boo = 'false';
       }
   });
-
+/***********************navigation in promo section*************************/
+const navItems = document.querySelectorAll('.nav__item'),
+sizeNavItems =  navItems.length;
+for(let i = 0; i < sizeNavItems; i++) {
+  navItems[i].addEventListener('click', e => {
+    e.preventDefault();
+    if (i == sizeNavItems - 1) i++;
+    performTransition(i + 1);
+  });
+}
 /*************************one page scroll***********************/
 /*const sections = document.querySelectorAll('section'),
 maincontent = document.querySelector('.main-content'),
