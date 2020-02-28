@@ -1,7 +1,7 @@
 # Terry Tao web page
 
 > Before download make sure last versions of [Node.js & NPM](https://nodejs.org/en/download/current/), 
-[последняя версия Yarn](https://yarnpkg.com/ru/docs/install) are available
+[Yarn](https://yarnpkg.com/ru/docs/install) are available
 
 ##  To deploy page:
 ```sh
@@ -10,7 +10,7 @@ $ cd terry_tao
 $ yarn
 ```
 
-## Скрипты package.json:
+##Scripts of package.json:
 
 | Script | Target |
 | ------ | ------ |
