@@ -1,29 +1,28 @@
-# Учебный шаблон проекта Portfolio
+# Terry Tao web page
 
-> Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/), а так же 
-[последняя версия Yarn](https://yarnpkg.com/ru/docs/install)
+> Before download make sure last versions of [Node.js & NPM](https://nodejs.org/en/download/current/), 
+[последняя версия Yarn](https://yarnpkg.com/ru/docs/install) are available
 
-##  Чтобы развернуть проект необходимо:
+##  To deploy page:
 ```sh
-$ git clone git@github.com:loftschool/ls-advanced-portfolio.git
-$ cd ls-advanced-portfolio
+$ git clone https://github.com/zhus-dika/terry_tao.git
+$ cd terry_tao
 $ yarn
 ```
 
 ## Скрипты package.json:
 
-| Скрипт | Назначение |
+| Script | Target |
 | ------ | ------ |
-| dev | Запустит webpack-dev-server с _горячей_ заменой модулей |
-| build | Соберет проект для **production** (проект готов к загрузке на сервер) |
-| reg | Консольная утилита для регистрации. Использовать перед началом работы над **админ-панелью**. |
+| dev | Run webpack-dev-server|
+| build | Build project **production**|
 
-#### Чтобы запустить скрипт:
+#### To evaluate script:
 ```sh
-$ npm run имя_скрипта
+$ npm run script_name
 ```
 
-##### Либо:
+##### Or:
 ```sh
-$ yarn имя_скрипта
+$ yarn script_name
 ```
